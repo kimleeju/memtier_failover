@@ -1066,7 +1066,7 @@ run_stats run_benchmark(int run_id, benchmark_config* cfg, object_generator* obj
     unsigned int active_threads = 0;
     
 	do {
-        active_threads = 0;
+		active_threads = 0;
         sleep(1);
 
         unsigned long int total_ops = 0;
@@ -1086,10 +1086,8 @@ run_stats run_benchmark(int run_id, benchmark_config* cfg, object_generator* obj
             float factor = ((float)(thread_counter - 1) / thread_counter);
             duration =  factor * duration +  (float)(*i)->m_cg->get_duration_usec() / thread_counter ;
         }
-		if((t_total_ops == total_ops)){
-			//cfg->port = (unsigned short)3001;
-			//run_benchmark(run_id,cfg,obj_gen);
-		}
+		
+		
 		t_total_ops = total_ops;
         unsigned long int cur_ops = total_ops-prev_ops;
         unsigned long int cur_bytes = total_bytes-prev_bytes;
@@ -1232,7 +1230,7 @@ static void cleanup_openssl(void)
 
 int main(int argc, char *argv[])
 {
-    benchmark_config cfg = benchmark_config();
+	benchmark_config cfg = benchmark_config();
     cfg.arbitrary_commands = new arbitrary_command_list();
 
     if (config_parse_args(argc, argv, &cfg) < 0) {

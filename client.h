@@ -114,7 +114,8 @@ public:
     virtual void create_request(struct timeval timestamp, unsigned int conn_id);
     virtual bool hold_pipeline(unsigned int conn_id);
     virtual int connect(void);
-    virtual void disconnect(void);
+    int connect(client* cl);
+	virtual void disconnect(void);
     //
 
     // Utility function to get the object iterator type based on the config

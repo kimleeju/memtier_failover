@@ -202,7 +202,6 @@ void shard_connection::setup_event(int sockfd) {
 #ifdef USE_TLS
     }
 #endif
-
     assert(m_bev != NULL);
     bufferevent_setcb(m_bev, cluster_client_read_handler,
         NULL, cluster_client_event_handler, (void *)this);
@@ -274,11 +273,9 @@ int shard_connection::connect(struct connect_info* addr) {
                   m_unix_sockaddr ? (struct sockaddr *) m_unix_sockaddr : addr->ci_addr,
                   m_unix_sockaddr ? sizeof(struct sockaddr_un) : addr->ci_addrlen) == -1) {
         disconnect();
-
         benchmark_error_log("connect failed, error = %s\n", strerror(errno));
-        return -1;
+		return -1;
     }
-
     return 0;
 }
 
@@ -496,16 +493,22 @@ void shard_connection::handle_event(short events)
     // connect() returning to us?  normally we expect EV_WRITE, but for UNIX domain
     // sockets we workaround since connect() returned immediately, but we don't want
     // to do any I/O from the client::connect() call...
-    
+#if 1 
 	if (events & BEV_EVENT_ERROR || events & BEV_EVENT_EOF) {
 		struct connect_info addr;
 		m_config->server_addr->get_connect_info(&addr);
-		disconnect();
+		//disconnect();
+		//m_conns_manager->disconnect();
+		event_base_loopbreak(m_event_base);
 		connect(&addr);
+		//m_conns_manager->connect();
+		//connect(&addr);
+        //bufferevent_enable(m_bev, EV_READ|EV_WRITE);
 		return;
 	}
-//    if ((get_connection_state() == conn_in_progress) && (events & BEV_EVENT_CONNECTED)) {
-        m_connection_state = conn_connected;
+#endif
+    if ((get_connection_state() == conn_in_progress) && (events & BEV_EVENT_CONNECTED)) {
+		m_connection_state = conn_connected;
         bufferevent_enable(m_bev, EV_READ|EV_WRITE);
 
         if (!m_conns_manager->get_reqs_processed()) {
@@ -516,7 +519,7 @@ void shard_connection::handle_event(short events)
         }
 
         return;
-//    }
+    }
 
 #if 0
     if (events & BEV_EVENT_ERROR) {
