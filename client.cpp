@@ -316,7 +316,6 @@ void client::create_request(struct timeval timestamp, unsigned int conn_id)
         const arbitrary_command* executed_command = m_config->arbitrary_commands->get_next_executed_command(m_arbitrary_command_ratio_count,
                                                                                                       m_executed_command_index);
         create_arbitrary_request(executed_command, timestamp, conn_id);
-
         return;
     }
 
@@ -334,6 +333,7 @@ void client::create_request(struct timeval timestamp, unsigned int conn_id)
 
         m_connections[conn_id]->send_wait_command(&timestamp, num_slaves, timeout);
         m_reqs_generated++;
+
     }
     // are we set or get? this depends on the ratio
     else if (m_set_ratio_count < m_config->ratio.a) {
@@ -350,7 +350,8 @@ void client::create_request(struct timeval timestamp, unsigned int conn_id)
         m_reqs_generated++;
         m_set_ratio_count++;
         m_tot_set_ops++;
-    } else if (m_get_ratio_count < m_config->ratio.b) {
+    
+	} else if (m_get_ratio_count < m_config->ratio.b) {
         // get command
         int iter = obj_iter_type(m_config, 2);
 

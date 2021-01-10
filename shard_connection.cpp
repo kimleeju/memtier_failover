@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with memtier_benchmark.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -66,9 +66,8 @@ void cluster_client_read_handler(bufferevent *bev, void *ctx)
 void cluster_client_event_handler(bufferevent *bev, short events, void *ctx)
 {
     shard_connection *sc = (shard_connection *) ctx;
-
-    //assert(sc != NULL);
-    sc->handle_event(events);
+    assert(sc != NULL);
+	sc->handle_event(events);
 }
 
 request::request(request_type type, unsigned int size, struct timeval* sent_time, unsigned int keys)
@@ -181,10 +180,11 @@ shard_connection::~shard_connection() {
 }
 
 void shard_connection::setup_event(int sockfd) {
-    if (m_bev) {
+    #if 1
+	if (m_bev) {
         bufferevent_free(m_bev);
     }
-
+#endif
 #ifdef USE_TLS
     if (m_config->openssl_ctx) {
         SSL *ctx = SSL_new(m_config->openssl_ctx);
@@ -193,12 +193,14 @@ void shard_connection::setup_event(int sockfd) {
         if (m_config->tls_sni) {
           SSL_set_tlsext_host_name(ctx, m_config->tls_sni);
         }
-
-        m_bev = bufferevent_openssl_socket_new(m_event_base,
+	//	if(!m_bev)
+        	m_bev = bufferevent_openssl_socket_new(m_event_base,
                 sockfd, ctx, BUFFEREVENT_SSL_CONNECTING, BEV_OPT_CLOSE_ON_FREE);
-    } else {
+	} else {
 #endif
-        m_bev = bufferevent_socket_new(m_event_base, sockfd, BEV_OPT_CLOSE_ON_FREE);
+	//	if(!m_bev)
+			m_bev = bufferevent_socket_new(m_event_base, sockfd, BEV_OPT_CLOSE_ON_FREE);
+		
 #ifdef USE_TLS
     }
 #endif
@@ -255,6 +257,7 @@ int shard_connection::connect(struct connect_info* addr) {
 
     // setup socket
     int sockfd = setup_socket(addr);
+    //printf("sockfd = %d\n",sockfd);
     if (sockfd < 0) {
         fprintf(stderr, "Failed to setup socket: %s", strerror(errno));
         return -1;
@@ -273,7 +276,7 @@ int shard_connection::connect(struct connect_info* addr) {
                   m_unix_sockaddr ? (struct sockaddr *) m_unix_sockaddr : addr->ci_addr,
                   m_unix_sockaddr ? sizeof(struct sockaddr_un) : addr->ci_addrlen) == -1) {
         disconnect();
-        benchmark_error_log("connect failed, error = %s\n", strerror(errno));
+        //benchmark_error_log("connect failed, error = %s\n", strerror(errno));
 		return -1;
     }
     return 0;
@@ -291,6 +294,8 @@ void shard_connection::disconnect() {
     m_authentication = auth_done;
     m_db_selection = select_done;
     m_cluster_slots = slots_done;
+
+    m_conns_manager->connect();
 }
 
 void shard_connection::set_address_port(const char* address, const char* port) {
@@ -373,9 +378,8 @@ void shard_connection::process_response(void)
 
     struct timeval now;
     gettimeofday(&now, NULL);
-
     while ((ret = m_protocol->parse_response()) > 0) {
-        bool error = false;
+		bool error = false;
         protocol_response *r = m_protocol->get_response();
 
         request* req = pop_req();
@@ -465,7 +469,7 @@ void shard_connection::process_response(void)
 
 void shard_connection::process_first_request() {
     m_conns_manager->set_start_time();
-    fill_pipeline();
+	fill_pipeline();
 }
 
 
@@ -473,19 +477,25 @@ void shard_connection::fill_pipeline(void)
 {
     struct timeval now;
     gettimeofday(&now, NULL);
-    while (!m_conns_manager->finished() && m_pipeline->size() < m_config->pipeline) {
-        if (!is_conn_setup_done()) {
+	
+	if(m_pipeline->size() >= m_config->pipeline)
+		pop_req();		
+//process_response();
+
+	while (!m_conns_manager->finished() && m_pipeline->size() < m_config->pipeline) {
+        //printf("55555555\n");
+		if (!is_conn_setup_done()) {
             send_conn_setup_commands(now);
             return;
         }
         // don't exceed requests
         if (m_conns_manager->hold_pipeline(m_id)) {
             break;
-        }
+		}
 
         // client manage requests logic
         m_conns_manager->create_request(now, m_id);
-    }
+	}
 }
 
 void shard_connection::handle_event(short events)
@@ -493,15 +503,16 @@ void shard_connection::handle_event(short events)
     // connect() returning to us?  normally we expect EV_WRITE, but for UNIX domain
     // sockets we workaround since connect() returned immediately, but we don't want
     // to do any I/O from the client::connect() call...
-#if 1 
+#if 1
+ 
 	if (events & BEV_EVENT_ERROR || events & BEV_EVENT_EOF) {
-		struct connect_info addr;
-		m_config->server_addr->get_connect_info(&addr);
+		//struct connect_info addr;
+		//m_config->server_addr->get_connect_info(&addr);
 		//disconnect();
 		//m_conns_manager->disconnect();
-		event_base_loopbreak(m_event_base);
-		connect(&addr);
-		//m_conns_manager->connect();
+	//	event_base_loopbreak(m_event_base);
+	//	connect(&addr);
+        m_conns_manager->connect();
 		//connect(&addr);
         //bufferevent_enable(m_bev, EV_READ|EV_WRITE);
 		return;
@@ -510,9 +521,8 @@ void shard_connection::handle_event(short events)
     if ((get_connection_state() == conn_in_progress) && (events & BEV_EVENT_CONNECTED)) {
 		m_connection_state = conn_connected;
         bufferevent_enable(m_bev, EV_READ|EV_WRITE);
-
         if (!m_conns_manager->get_reqs_processed()) {
-            process_first_request();
+			process_first_request();
         } else {
             benchmark_debug_log("reconnection complete, proceeding with test\n");
 			fill_pipeline();

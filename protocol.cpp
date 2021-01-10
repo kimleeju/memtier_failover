@@ -419,11 +419,11 @@ int redis_protocol::parse_response(void)
 
                 break;
             case rs_read_line:
-                line = evbuffer_readln(m_read_buf, &res_len, EVBUFFER_EOL_CRLF_STRICT);
+				line = evbuffer_readln(m_read_buf, &res_len, EVBUFFER_EOL_CRLF_STRICT);
 
                 // maybe we didn't get it yet?
                 if (line == NULL) {
-                    return 0;
+				    return 0;
                 }
 
                 // count CRLF
@@ -996,8 +996,8 @@ int memcache_binary_protocol::write_command_get(const char *key, int key_len, un
     req.message.header.request.datatype = PROTOCOL_BINARY_RAW_BYTES;
     req.message.header.request.bodylen = htonl(key_len);
     req.message.header.request.extlen = 0;
-
-    evbuffer_add(m_write_buf, &req, sizeof(req));
+    
+	evbuffer_add(m_write_buf, &req, sizeof(req));
     evbuffer_add(m_write_buf, key, key_len);
 
     return sizeof(req) + key_len;
@@ -1059,7 +1059,6 @@ int memcache_binary_protocol::parse_response(void)
     while (true) {
         int ret;
         int status;
-
         switch (m_response_state) {
             case rs_initial:
                 if (evbuffer_get_length(m_read_buf) < sizeof(m_response_hdr))
