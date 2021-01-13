@@ -200,7 +200,7 @@ int client::connnect(client* cl)
 int client::connect(void)
 {
     struct connect_info addr;
-
+	
     // get primary connection
     shard_connection* sc = MAIN_CONNECTION;
     assert(sc != NULL);
@@ -410,12 +410,17 @@ int client::prepare(void)
 void client::handle_response(unsigned int conn_id, struct timeval timestamp,
                              request *request, protocol_response *response)
 {
-#if 0
+#if 1
 	if (response->is_error()) {
+		#if 0
 		 benchmark_error_log("server %s handle error response: %s\n",
                             m_connections[conn_id]->get_readable_id(),
                             response->get_status());
-	 }
+		#endif
+
+		connect();
+		handle_response(conn_id, timestamp, request, response);
+	}
 #endif
     switch (request->m_type) {
         case rt_get:

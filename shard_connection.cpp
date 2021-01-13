@@ -497,7 +497,7 @@ void shard_connection::handle_event(short events)
     // to do any I/O from the client::connect() call...
 	if (events & BEV_EVENT_ERROR || events & BEV_EVENT_EOF){
 		struct connect_info addr;
-		m_config->server_addr->get_connect_info(&addr,true,"3000");
+		m_config->server_addr->get_connect_info(&addr,true,"3001");
 		connect_cnt = true;
 #if 0
 		if(connect_cnt >= (m_config->clients * m_config->threads)){
