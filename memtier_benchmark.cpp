@@ -1061,7 +1061,6 @@ run_stats run_benchmark(int run_id, benchmark_config* cfg, object_generator* obj
     double prev_latency = 0, cur_latency = 0;
     unsigned long int cur_ops_sec = 0;
     unsigned long int cur_bytes_sec = 0;
-	unsigned long int t_total_ops = 0;
     // provide some feedback...
     unsigned int active_threads = 0;
     
@@ -1087,8 +1086,6 @@ run_stats run_benchmark(int run_id, benchmark_config* cfg, object_generator* obj
             duration =  factor * duration +  (float)(*i)->m_cg->get_duration_usec() / thread_counter ;
         }
 		
-		
-		t_total_ops = total_ops;
         unsigned long int cur_ops = total_ops-prev_ops;
         unsigned long int cur_bytes = total_bytes-prev_bytes;
         unsigned long int cur_duration = duration-prev_duration;

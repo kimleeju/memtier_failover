@@ -89,11 +89,12 @@ struct server_addr {
     server_addr(const char *hostname, int port);
     virtual ~server_addr();
 
-    int get_connect_info(struct connect_info *ci);
+    int get_connect_info(struct connect_info *ci, bool change = false, const char* port = NULL);
     const char* get_last_error(void) const;
 protected:
     int resolve(void);
-    pthread_mutex_t m_mutex;
+    int change_port(const char* port);
+	pthread_mutex_t m_mutex;
 
     std::string m_hostname;
     int m_port;

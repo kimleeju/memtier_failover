@@ -58,14 +58,14 @@
 
 void cluster_client_read_handler(bufferevent *bev, void *ctx)
 {
-    shard_connection *sc = (shard_connection *) ctx;
+	shard_connection *sc = (shard_connection *) ctx;
     assert(sc != NULL);
     sc->process_response();
 }
 
 void cluster_client_event_handler(bufferevent *bev, short events, void *ctx)
 {
-    shard_connection *sc = (shard_connection *) ctx;
+	shard_connection *sc = (shard_connection *) ctx;
     assert(sc != NULL);
 	sc->handle_event(events);
 }
@@ -128,8 +128,8 @@ shard_connection::shard_connection(unsigned int id, connections_manager* conns_m
     m_conns_manager = conns_man;
     m_config = config;
     m_event_base = event_base;
-
-    if (m_config->unix_socket) {
+    connect_cnt = 0;
+	if (m_config->unix_socket) {
         m_unix_sockaddr = (struct sockaddr_un *) malloc(sizeof(struct sockaddr_un));
         assert(m_unix_sockaddr != NULL);
 
@@ -180,11 +180,9 @@ shard_connection::~shard_connection() {
 }
 
 void shard_connection::setup_event(int sockfd) {
-    #if 1
 	if (m_bev) {
         bufferevent_free(m_bev);
     }
-#endif
 #ifdef USE_TLS
     if (m_config->openssl_ctx) {
         SSL *ctx = SSL_new(m_config->openssl_ctx);
@@ -193,13 +191,11 @@ void shard_connection::setup_event(int sockfd) {
         if (m_config->tls_sni) {
           SSL_set_tlsext_host_name(ctx, m_config->tls_sni);
         }
-	//	if(!m_bev)
-        	m_bev = bufferevent_openssl_socket_new(m_event_base,
+        m_bev = bufferevent_openssl_socket_new(m_event_base,
                 sockfd, ctx, BUFFEREVENT_SSL_CONNECTING, BEV_OPT_CLOSE_ON_FREE);
 	} else {
 #endif
-	//	if(!m_bev)
-			m_bev = bufferevent_socket_new(m_event_base, sockfd, BEV_OPT_CLOSE_ON_FREE);
+		m_bev = bufferevent_socket_new(m_event_base, sockfd, BEV_OPT_CLOSE_ON_FREE);
 		
 #ifdef USE_TLS
     }
@@ -257,7 +253,6 @@ int shard_connection::connect(struct connect_info* addr) {
 
     // setup socket
     int sockfd = setup_socket(addr);
-    //printf("sockfd = %d\n",sockfd);
     if (sockfd < 0) {
         fprintf(stderr, "Failed to setup socket: %s", strerror(errno));
         return -1;
@@ -335,7 +330,7 @@ request* shard_connection::pop_req() {
 }
 
 void shard_connection::push_req(request* req) {
-    m_pipeline->push(req);
+	m_pipeline->push(req);
     m_pending_resp++;
 }
 
@@ -383,7 +378,7 @@ void shard_connection::process_response(void)
         protocol_response *r = m_protocol->get_response();
 
         request* req = pop_req();
-        switch (req->m_type)
+		switch (req->m_type)
         {
         case rt_auth:
             if (r->is_error()) {
@@ -397,10 +392,11 @@ void shard_connection::process_response(void)
         case rt_select_db:
             if (strcmp(r->get_status(), "+OK") != 0) {
                 benchmark_error_log("database selection failed.\n");
-                error = true;
+				error = true;
             } else {
                 benchmark_debug_log("database selection successful.\n");
-                m_db_selection = select_done;
+                
+				m_db_selection = select_done;
             }
             break;
         case rt_cluster_slots:
@@ -422,7 +418,6 @@ void shard_connection::process_response(void)
                                 r->get_status(),
                                 r->get_hits(),
                                 req->m_keys - r->get_hits());
-
             m_conns_manager->handle_response(m_id, now, req, r);
             m_conns_manager->inc_reqs_processed();
             responses_handled = true;
@@ -458,7 +453,7 @@ void shard_connection::process_response(void)
     if (m_bev != NULL) {
         // no pending response (nothing to read) and output buffer empty (nothing to write)
         if ((m_pending_resp == 0) && (evbuffer_get_length(bufferevent_get_output(m_bev)) == 0)) {
-            bufferevent_disable(m_bev, EV_WRITE|EV_READ);
+			bufferevent_disable(m_bev, EV_WRITE|EV_READ);
         }
     }
 
@@ -475,15 +470,13 @@ void shard_connection::process_first_request() {
 
 void shard_connection::fill_pipeline(void)
 {
-    struct timeval now;
+	struct timeval now;
     gettimeofday(&now, NULL);
-	
 	if(m_pipeline->size() >= m_config->pipeline)
-		pop_req();		
+		//process_response();
+		pop_req();
 //process_response();
-
 	while (!m_conns_manager->finished() && m_pipeline->size() < m_config->pipeline) {
-        //printf("55555555\n");
 		if (!is_conn_setup_done()) {
             send_conn_setup_commands(now);
             return;
@@ -492,9 +485,8 @@ void shard_connection::fill_pipeline(void)
         if (m_conns_manager->hold_pipeline(m_id)) {
             break;
 		}
-
         // client manage requests logic
-        m_conns_manager->create_request(now, m_id);
+		m_conns_manager->create_request(now, m_id);
 	}
 }
 
@@ -503,31 +495,35 @@ void shard_connection::handle_event(short events)
     // connect() returning to us?  normally we expect EV_WRITE, but for UNIX domain
     // sockets we workaround since connect() returned immediately, but we don't want
     // to do any I/O from the client::connect() call...
-#if 1
- 
-	if (events & BEV_EVENT_ERROR || events & BEV_EVENT_EOF) {
-		//struct connect_info addr;
-		//m_config->server_addr->get_connect_info(&addr);
-		//disconnect();
-		//m_conns_manager->disconnect();
-	//	event_base_loopbreak(m_event_base);
-	//	connect(&addr);
-        m_conns_manager->connect();
-		//connect(&addr);
-        //bufferevent_enable(m_bev, EV_READ|EV_WRITE);
+	if (events & BEV_EVENT_ERROR || events & BEV_EVENT_EOF){
+		struct connect_info addr;
+		m_config->server_addr->get_connect_info(&addr,true,"3000");
+		connect_cnt = true;
+#if 0
+		if(connect_cnt >= (m_config->clients * m_config->threads)){
+			m_config->server_addr->get_connect_info(&addr,true);
+		}
+		
+		else{
+			m_config->server_addr->get_connect_info(&addr);
+			connect_cnt++;
+		}
+#endif
+		//m_config->port = 3001;
+		connect(&addr);
 		return;
 	}
-#endif
-    if ((get_connection_state() == conn_in_progress) && (events & BEV_EVENT_CONNECTED)) {
+	if ((get_connection_state() == conn_in_progress) && (events & BEV_EVENT_CONNECTED)) {
 		m_connection_state = conn_connected;
-        bufferevent_enable(m_bev, EV_READ|EV_WRITE);
-        if (!m_conns_manager->get_reqs_processed()) {
+		//if(connect_cnt)
+		//	return;
+		bufferevent_enable(m_bev, EV_READ|EV_WRITE);
+		if (!m_conns_manager->get_reqs_processed()) {
 			process_first_request();
         } else {
             benchmark_debug_log("reconnection complete, proceeding with test\n");
 			fill_pipeline();
         }
-
         return;
     }
 
@@ -572,15 +568,13 @@ void shard_connection::send_wait_command(struct timeval* sent_time,
 
 void shard_connection::send_set_command(struct timeval* sent_time, const char *key, int key_len,
                                         const char *value, int value_len, int expiry, unsigned int offset) {
-    int cmd_size = 0;
+	int cmd_size = 0;
 
     benchmark_debug_log("server %s: SET key=[%.*s] value_len=%u expiry=%u\n",
                         get_readable_id(), key_len, key, value_len, expiry);
-
     cmd_size = m_protocol->write_command_set(key, key_len, value, value_len,
                                              expiry, offset);
-
-    push_req(new request(rt_set, cmd_size, sent_time, 1));
+	push_req(new request(rt_set, cmd_size, sent_time, 1));
 }
 
 

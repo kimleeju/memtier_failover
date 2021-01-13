@@ -261,7 +261,22 @@ int server_addr::resolve(void)
     return m_last_error;
 }
 
-int server_addr::get_connect_info(struct connect_info *ci)
+int server_addr::change_port(const char* port)
+{
+    char port_str[20];
+    struct addrinfo hints;
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_flags = AI_PASSIVE;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_family = AF_INET;      // Don't play with IPv6 for now...
+
+    snprintf(port_str, sizeof(port_str)-1, "%u", m_port);
+    m_last_error = getaddrinfo(m_hostname.c_str(),port, &hints, &m_server_addr);
+    return m_last_error;
+}
+
+int server_addr::get_connect_info(struct connect_info *ci, bool change, const char* port)
 {
     pthread_mutex_lock(&m_mutex);
     if (m_used_addr)
@@ -277,7 +292,10 @@ int server_addr::get_connect_info(struct connect_info *ci)
             m_used_addr = NULL;
         }
     }
-
+	if(change){
+		change_port(port);
+		m_used_addr = m_server_addr;
+	}
     if (m_used_addr) {
         ci->ci_family = m_used_addr->ai_family;
         ci->ci_socktype = m_used_addr->ai_socktype;

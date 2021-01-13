@@ -316,7 +316,7 @@ void client::create_request(struct timeval timestamp, unsigned int conn_id)
         const arbitrary_command* executed_command = m_config->arbitrary_commands->get_next_executed_command(m_arbitrary_command_ratio_count,
                                                                                                       m_executed_command_index);
         create_arbitrary_request(executed_command, timestamp, conn_id);
-        return;
+	    return;
     }
 
     // If the Set:Wait ratio is not 0, start off with WAITs
@@ -337,24 +337,25 @@ void client::create_request(struct timeval timestamp, unsigned int conn_id)
     }
     // are we set or get? this depends on the ratio
     else if (m_set_ratio_count < m_config->ratio.a) {
-        // set command
+     // set command
         data_object *obj = m_obj_gen->get_object(obj_iter_type(m_config, 0));
         unsigned int key_len;
         const char *key = obj->get_key(&key_len);
         unsigned int value_len;
         const char *value = obj->get_value(&value_len);
 
-        m_connections[conn_id]->send_set_command(&timestamp, key, key_len,
+        //m_connections[conn_id]->send_get_command(&timestamp, key, key_len, m_config->data_offset);
+		m_connections[conn_id]->send_set_command(&timestamp, key, key_len,
                                                  value, value_len, obj->get_expiry(),
-                                                 m_config->data_offset);
-        m_reqs_generated++;
+        	                                     m_config->data_offset);
+		 m_reqs_generated++;
         m_set_ratio_count++;
         m_tot_set_ops++;
-    
+ 		   
 	} else if (m_get_ratio_count < m_config->ratio.b) {
         // get command
         int iter = obj_iter_type(m_config, 2);
-
+	
         if (m_config->multi_key_get > 0) {
             unsigned int keys_count;
 
@@ -381,12 +382,12 @@ void client::create_request(struct timeval timestamp, unsigned int conn_id)
             const char *key = m_obj_gen->get_key(iter, &keylen);
             assert(key != NULL);
             assert(keylen > 0);
-
             m_connections[conn_id]->send_get_command(&timestamp, key, keylen, m_config->data_offset);
             m_reqs_generated++;
             m_get_ratio_count++;
         }
     } else {
+
         // overlap counters
         m_get_ratio_count = m_set_ratio_count = 0;
     }
@@ -409,12 +410,13 @@ int client::prepare(void)
 void client::handle_response(unsigned int conn_id, struct timeval timestamp,
                              request *request, protocol_response *response)
 {
-    if (response->is_error()) {
-        benchmark_error_log("server %s handle error response: %s\n",
+#if 0
+	if (response->is_error()) {
+		 benchmark_error_log("server %s handle error response: %s\n",
                             m_connections[conn_id]->get_readable_id(),
                             response->get_status());
-    }
-
+	 }
+#endif
     switch (request->m_type) {
         case rt_get:
             m_stats.update_get_op(&timestamp,

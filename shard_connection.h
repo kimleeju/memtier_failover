@@ -161,7 +161,8 @@ private:
     void handle_event(short evtype);
 
     unsigned int m_id;
-    connections_manager* m_conns_manager;
+	int connect_cnt;
+	connections_manager* m_conns_manager;
     benchmark_config* m_config;
 
     char* m_address;

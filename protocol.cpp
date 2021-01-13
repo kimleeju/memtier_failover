@@ -275,9 +275,8 @@ int redis_protocol::write_command_set(const char *key, int key_len, const char *
     assert(value != NULL);
     assert(value_len > 0);
     int size = 0;
-
     if (!expiry && !offset) {
-        size = evbuffer_add_printf(m_write_buf,
+		size = evbuffer_add_printf(m_write_buf,
             "*3\r\n"
             "$3\r\n"
             "SET\r\n"
@@ -287,8 +286,8 @@ int redis_protocol::write_command_set(const char *key, int key_len, const char *
         size += evbuffer_add_printf(m_write_buf,
             "\r\n"
             "$%u\r\n", value_len);
-    } else if(offset) {
-        char offset_str[30];
+	} else if(offset) {
+		char offset_str[30];
         snprintf(offset_str, sizeof(offset_str)-1, "%u", offset);
 
         size = evbuffer_add_printf(m_write_buf,
@@ -304,6 +303,7 @@ int redis_protocol::write_command_set(const char *key, int key_len, const char *
             "%s\r\n"
             "$%u\r\n", (unsigned int) strlen(offset_str), offset_str, value_len);
     } else {
+
         char expiry_str[30];
         snprintf(expiry_str, sizeof(expiry_str)-1, "%u", expiry);
 
@@ -320,10 +320,10 @@ int redis_protocol::write_command_set(const char *key, int key_len, const char *
             "%s\r\n"
             "$%u\r\n", (unsigned int) strlen(expiry_str), expiry_str, value_len);
     }
+
     evbuffer_add(m_write_buf, value, value_len);
     evbuffer_add(m_write_buf, "\r\n", 2);
     size += value_len + 2;
-
     return size;
 }
 
@@ -407,7 +407,6 @@ int redis_protocol::parse_response(void)
 {
     char *line;
     size_t res_len;
-
     while (true) {
         switch (m_response_state) {
             case rs_initial:
@@ -965,7 +964,6 @@ int memcache_binary_protocol::write_command_set(const char *key, int key_len, co
     assert(value_len > 0);
 
     protocol_binary_request_set req;
-
     memset(&req, 0, sizeof(req));
     req.message.header.request.magic = PROTOCOL_BINARY_REQ;
     req.message.header.request.opcode = PROTOCOL_BINARY_CMD_SET;
@@ -974,11 +972,9 @@ int memcache_binary_protocol::write_command_set(const char *key, int key_len, co
     req.message.header.request.bodylen = htonl(sizeof(req.message.body) + value_len + key_len);
     req.message.header.request.extlen = sizeof(req.message.body);
     req.message.body.expiration = htonl(expiry);
-
     evbuffer_add(m_write_buf, &req, sizeof(req));
     evbuffer_add(m_write_buf, key, key_len);
     evbuffer_add(m_write_buf, value, value_len);
-
     return sizeof(req) + key_len + value_len;
 }
 
@@ -1056,20 +1052,21 @@ int memcache_binary_protocol::write_command_wait(unsigned int num_slaves, unsign
 
 int memcache_binary_protocol::parse_response(void)
 {
-    while (true) {
+	while (true) {
         int ret;
         int status;
         switch (m_response_state) {
             case rs_initial:
-                if (evbuffer_get_length(m_read_buf) < sizeof(m_response_hdr))
-                    return 0;               // no header yet?
-
+                if (evbuffer_get_length(m_read_buf) < sizeof(m_response_hdr)){
+				   return 0;               // no header yet?
+				}
                 ret = evbuffer_remove(m_read_buf, (void *)&m_response_hdr, sizeof(m_response_hdr));
                 assert(ret == sizeof(m_response_hdr));
 
                 if (m_response_hdr.message.header.response.magic != PROTOCOL_BINARY_RES) {
                     benchmark_error_log("error: invalid memcache response header magic.\n");
-                    return -1;
+                    
+					return -1;
                 }
 
                 m_response_len = sizeof(m_response_hdr);
@@ -1132,7 +1129,7 @@ int memcache_binary_protocol::parse_response(void)
                 break;
             default:
                 benchmark_debug_log("unknown response state.\n");
-                return -1;
+				return -1;
         }
     }
 
