@@ -473,7 +473,6 @@ void shard_connection::fill_pipeline(void)
 	struct timeval now;
     gettimeofday(&now, NULL);
 	if(m_pipeline->size() >= m_config->pipeline)
-		//process_response();
 		pop_req();
 //process_response();
 	while (!m_conns_manager->finished() && m_pipeline->size() < m_config->pipeline) {

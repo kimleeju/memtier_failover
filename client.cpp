@@ -417,9 +417,12 @@ void client::handle_response(unsigned int conn_id, struct timeval timestamp,
                             m_connections[conn_id]->get_readable_id(),
                             response->get_status());
 		#endif
-
-		connect();
-		handle_response(conn_id, timestamp, request, response);
+		//struct connect_info addr;
+		//connect();
+		//handle_response(conn_id, timestamp, request, response);
+		//m_config->server_addr->get_connect_info(&addr);
+		//connect(&addr);
+		return;
 	}
 #endif
     switch (request->m_type) {

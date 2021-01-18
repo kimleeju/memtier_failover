@@ -419,7 +419,6 @@ int redis_protocol::parse_response(void)
                 break;
             case rs_read_line:
 				line = evbuffer_readln(m_read_buf, &res_len, EVBUFFER_EOL_CRLF_STRICT);
-
                 // maybe we didn't get it yet?
                 if (line == NULL) {
 				    return 0;
