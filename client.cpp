@@ -200,7 +200,6 @@ int client::connnect(client* cl)
 int client::connect(void)
 {
     struct connect_info addr;
-	
     // get primary connection
     shard_connection* sc = MAIN_CONNECTION;
     assert(sc != NULL);
@@ -222,8 +221,7 @@ int client::connect(void)
 
         // save address and port
         sc->set_address_port(address, port_str);
-    }
-
+	}
     // call connect
     int ret = sc->connect(&addr);
     if (ret)
@@ -410,21 +408,27 @@ int client::prepare(void)
 void client::handle_response(unsigned int conn_id, struct timeval timestamp,
                              request *request, protocol_response *response)
 {
-#if 1
 	if (response->is_error()) {
-		#if 0
-		 benchmark_error_log("server %s handle error response: %s\n",
-                            m_connections[conn_id]->get_readable_id(),
-                            response->get_status());
-		#endif
-		//struct connect_info addr;
-		//connect();
-		//handle_response(conn_id, timestamp, request, response);
-		//m_config->server_addr->get_connect_info(&addr);
-		//connect(&addr);
-		return;
-	}
+#if 0
+		struct connect_info addr;
+		m_config->server_addr->get_connect_info(&addr,true,"3000");
+		m_config->port = 3000;
+		for (unsigned int i = 0; i < m_connections.size(); i++) {
+        	shard_connection* sc = m_connections[i];
+    		sc->connect(&addr);
+		}
+#if 0
+		shard_connection* sc = MAIN_CONNECTION;
+		struct connect_info addr;
+		m_config->server_addr->get_connect_info(&addr,true,"3002");
+		sc->connect(&addr);
 #endif
+		//m_config->port = 3002;
+		//connect();
+#endif
+		//return;
+		
+	}
     switch (request->m_type) {
         case rt_get:
             m_stats.update_get_op(&timestamp,

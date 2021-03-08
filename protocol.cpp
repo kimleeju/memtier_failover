@@ -502,8 +502,9 @@ int redis_protocol::parse_response(void)
                         m_current_mbulk = m_current_mbulk->get_next_mbulk();
                     }
 
-                    if (line[0] == '-')
-                        m_last_response.set_error(true);
+                    if (line[0] == '-'){
+						m_last_response.set_error(true);
+					}
 
                     m_last_response.set_status(line);
                     m_total_bulks_count--;

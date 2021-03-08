@@ -248,7 +248,8 @@ int shard_connection::setup_socket(struct connect_info* addr) {
 
 int shard_connection::connect(struct connect_info* addr) {
     // set required setup commands
-    m_authentication = m_config->authenticate ? auth_none : auth_done;
+    
+	m_authentication = m_config->authenticate ? auth_none : auth_done;
     m_db_selection = m_config->select_db ? select_none : select_done;
 
     // setup socket
@@ -257,7 +258,6 @@ int shard_connection::connect(struct connect_info* addr) {
         fprintf(stderr, "Failed to setup socket: %s", strerror(errno));
         return -1;
     }
-
     // set up bufferevent
     setup_event(sockfd);
 
@@ -320,12 +320,10 @@ const char* shard_connection::get_readable_id() {
 }
 
 request* shard_connection::pop_req() {
-    request* req = m_pipeline->front();
+	request* req = m_pipeline->front();
     m_pipeline->pop();
-
     m_pending_resp--;
-    assert(m_pending_resp >= 0);
-
+	assert(m_pending_resp >= 0);
     return req;
 }
 
@@ -376,8 +374,7 @@ void shard_connection::process_response(void)
     while ((ret = m_protocol->parse_response()) > 0) {
 		bool error = false;
         protocol_response *r = m_protocol->get_response();
-
-        request* req = pop_req();
+		request* req = pop_req();
 		switch (req->m_type)
         {
         case rt_auth:
@@ -418,7 +415,17 @@ void shard_connection::process_response(void)
                                 r->get_status(),
                                 r->get_hits(),
                                 req->m_keys - r->get_hits());
-            m_conns_manager->handle_response(m_id, now, req, r);
+            if(r->is_error())
+			{
+#if 1
+				struct connect_info addr;
+				m_config->server_addr->get_connect_info(&addr,true,"3000");
+				//m_config->server_addr->get_connect_info(&addr,true,"3001");
+				connect(&addr);
+				return;
+#endif
+			}
+			m_conns_manager->handle_response(m_id, now, req, r);
             m_conns_manager->inc_reqs_processed();
             responses_handled = true;
 			break;
@@ -448,7 +455,7 @@ void shard_connection::process_response(void)
     }
 
     fill_pipeline();
-
+	
     // update events
     if (m_bev != NULL) {
         // no pending response (nothing to read) and output buffer empty (nothing to write)
@@ -472,8 +479,15 @@ void shard_connection::fill_pipeline(void)
 {
 	struct timeval now;
     gettimeofday(&now, NULL);
-	if(m_pipeline->size() >= m_config->pipeline)
+
+	//printf("m_pending_resp = %d, m_pipeline->size() = %d\n",m_pending_resp,m_pipeline->size());
+	if(m_pipeline->size() >= m_config->pipeline){
+	//if(m_pipeline->size() >= m_config->pipeline && m_pending_resp > 1){
+		//printf("m_pending_resp = %d, m_pipeline->size() = %d\n",m_pending_resp,m_pipeline->size());
 		pop_req();
+		//printf("m_pipeline->size() = %d, m_config->pipeline %d\n",m_pipeline->size(), m_config->pipeline);
+	}
+
 //process_response();
 	while (!m_conns_manager->finished() && m_pipeline->size() < m_config->pipeline) {
 		if (!is_conn_setup_done()) {
@@ -495,27 +509,17 @@ void shard_connection::handle_event(short events)
     // sockets we workaround since connect() returned immediately, but we don't want
     // to do any I/O from the client::connect() call...
 	if (events & BEV_EVENT_ERROR || events & BEV_EVENT_EOF){
+#if 1
 		struct connect_info addr;
+//		m_config->server_addr->get_connect_info(&addr,true,"3000");
+
 		m_config->server_addr->get_connect_info(&addr,true,"3001");
-		connect_cnt = true;
-#if 0
-		if(connect_cnt >= (m_config->clients * m_config->threads)){
-			m_config->server_addr->get_connect_info(&addr,true);
-		}
-		
-		else{
-			m_config->server_addr->get_connect_info(&addr);
-			connect_cnt++;
-		}
-#endif
-		//m_config->port = 3001;
 		connect(&addr);
-		return;
+	//	return;
+#endif
 	}
 	if ((get_connection_state() == conn_in_progress) && (events & BEV_EVENT_CONNECTED)) {
 		m_connection_state = conn_connected;
-		//if(connect_cnt)
-		//	return;
 		bufferevent_enable(m_bev, EV_READ|EV_WRITE);
 		if (!m_conns_manager->get_reqs_processed()) {
 			process_first_request();

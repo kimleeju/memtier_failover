@@ -5,7 +5,7 @@ while [ 1 ]; do
 	cat result.txt | head -n $cnt | tail -n 10 | awk '{sum+=$10} END{print sum}' >> result_iops.txt
 	cnt=$(($cnt+1))
 	
-	if [[ $cnt == 1500 ]]; then
+	if [[ $cnt == 175 ]]; then
 		break
 	fi
 done

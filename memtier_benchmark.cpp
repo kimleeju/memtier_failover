@@ -1066,8 +1066,8 @@ run_stats run_benchmark(int run_id, benchmark_config* cfg, object_generator* obj
     
 	do {
 		active_threads = 0;
-        usleep(10000);
-
+        usleep(100000);
+		//sleep(1);
         unsigned long int total_ops = 0;
         unsigned long int total_bytes = 0;
         unsigned long int duration = 0;
@@ -1119,7 +1119,7 @@ run_stats run_benchmark(int run_id, benchmark_config* cfg, object_generator* obj
         else
             progress = 100.0 * (duration / 1000000.0)/cfg->test_time;
 
-        fprintf(stderr, "[RUN #%u %.0f%%, %3u secs] %2u threads: %11lu ops, %7lu (avg: %7lu) ops/sec, %s/sec (avg: %s/sec), %5.2f (avg: %5.2f) msec latency\r",
+        fprintf(stderr, "[RUN #%u %.0f%%, %3u secs] %2u threads: %11lu ops, %7lu (avg: %7lu) ops/sec, %s/sec (avg: %s/sec), %5.2f (avg: %5.2f) msec latency\r\n",
             run_id, progress, (unsigned int) (duration / 1000000), active_threads, total_ops, cur_ops_sec, ops_sec, cur_bytes_str, bytes_str, cur_latency, avg_latency);
     	fprintf(fp,"[RUN #%u %.0f%%, %3u secs] %2u threads: %11lu ops, %7lu (avg: %7lu) ops/sec, %s/sec (avg: %s/sec), %5.2f (avg: %5.2f) msec latency\r\n",
             run_id, progress, (unsigned int) (duration / 1000000), active_threads, total_ops, cur_ops_sec, ops_sec, cur_bytes_str, bytes_str, cur_latency, avg_latency);

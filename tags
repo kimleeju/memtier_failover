@@ -4,7 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/ljkim\/memtier_benchmark\/missing aclocal-1.15$/;"	m
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/ljkim\/memtier_failover_modified\/missing aclocal-1.16$/;"	m
 ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
 AMTAR	Makefile	/^AMTAR = $${TAR-tar}$/;"	m
 AM_DEFAULT_VERBOSITY	Makefile	/^AM_DEFAULT_VERBOSITY = 0$/;"	m
@@ -17,12 +17,11 @@ AM_V_GEN	Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
 AM_V_P	Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
 AM_V_at	Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
 AM_V_lt	Makefile	/^AM_V_lt = $(am__v_lt_$(V))$/;"	m
-AR	Makefile	/^AR = ar$/;"	m
 ASK_MSG_PREFIX	cluster_client.cpp	56;"	d	file:
 ASK_MSG_PREFIX_LEN	cluster_client.cpp	57;"	d	file:
-AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/ljkim\/memtier_benchmark\/missing autoconf$/;"	m
-AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/ljkim\/memtier_benchmark\/missing autoheader$/;"	m
-AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/ljkim\/memtier_benchmark\/missing automake-1.15$/;"	m
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/ljkim\/memtier_failover_modified\/missing autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/ljkim\/memtier_failover_modified\/missing autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/ljkim\/memtier_failover_modified\/missing automake-1.16$/;"	m
 AUTOMAKE_OPTIONS	Makefile	/^AUTOMAKE_OPTIONS = foreign 1.9 subdir-objects$/;"	m
 AVERAGE	run_stats.cpp	268;"	d	file:
 AWK	Makefile	/^AWK = mawk$/;"	m
@@ -43,7 +42,7 @@ CC	Makefile	/^CC = gcc$/;"	m
 CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
 CCLD	Makefile	/^CCLD = $(CC)$/;"	m
 CFLAGS	Makefile	/^CFLAGS = -g -O2$/;"	m
-CLASSIC	deps/hdr_histogram/hdr_histogram.h	/^    CLASSIC,$/;"	e	enum:__anon62
+CLASSIC	deps/hdr_histogram/hdr_histogram.h	/^    CLASSIC,$/;"	e	enum:__anon3
 CLASSIC_FOOTER	deps/hdr_histogram/hdr_histogram.c	/^static const char CLASSIC_FOOTER[] =$/;"	v	file:
 COMPILE	Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
 CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
@@ -52,20 +51,19 @@ CONFIG_HEADER	Makefile	/^CONFIG_HEADER = config.h$/;"	m
 CPP	Makefile	/^CPP = gcc -E$/;"	m
 CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
 CSCOPE	Makefile	/^CSCOPE = cscope$/;"	m
-CSV	deps/hdr_histogram/hdr_histogram.h	/^    CSV$/;"	e	enum:__anon62
+CSV	deps/hdr_histogram/hdr_histogram.h	/^    CSV$/;"	e	enum:__anon3
 CTAGS	Makefile	/^CTAGS = ctags$/;"	m
 CXX	Makefile	/^CXX = g++$/;"	m
 CXXCOMPILE	Makefile	/^CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \\$/;"	m
-CXXCPP	Makefile	/^CXXCPP = g++ -E$/;"	m
 CXXDEPMODE	Makefile	/^CXXDEPMODE = depmode=gcc3$/;"	m
 CXXFLAGS	Makefile	/^CXXFLAGS = -O2 -g -Wall$/;"	m
 CXXLD	Makefile	/^CXXLD = $(CXX)$/;"	m
-CXXLINK	Makefile	/^CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \\$/;"	m
+CXXLINK	Makefile	/^CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \\$/;"	m
 CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
 CreateProcess	libtool	/^   CreateProcess().  We must quote the arguments since Win32 CreateProcess()$/;"	f
 CreateProcess	ltmain.sh	/^   CreateProcess().  We must quote the arguments since Win32 CreateProcess()$/;"	f
 DATA	Makefile	/^DATA = $(completions_DATA)$/;"	m
-DATA_PLACEHOLDER	config_types.h	106;"	d
+DATA_PLACEHOLDER	config_types.h	107;"	d
 DEFAULT_INCLUDES	Makefile	/^DEFAULT_INCLUDES = -I.$/;"	m
 DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
 DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
@@ -74,57 +72,52 @@ DIST_ARCHIVES	Makefile	/^DIST_ARCHIVES = $(distdir).tar.gz$/;"	m
 DIST_COMMON	Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(top_srcdir)\/configure \\$/;"	m
 DIST_SOURCES	Makefile	/^DIST_SOURCES = $(memtier_benchmark_SOURCES)$/;"	m
 DIST_TARGETS	Makefile	/^DIST_TARGETS = dist-gzip$/;"	m
-DLLTOOL	Makefile	/^DLLTOOL = false$/;"	m
 DONE	deps/hdr_histogram/hdr_histogram_log.c	/^    INIT, TAG, BEGIN_TIMESTAMP, INTERVAL, MAX, HISTOGRAM, DONE$/;"	e	enum:parse_log_state	file:
-DSYMUTIL	Makefile	/^DSYMUTIL = $/;"	m
-DUMPBIN	Makefile	/^DUMPBIN = $/;"	m
 ECHO_C	Makefile	/^ECHO_C = $/;"	m
 ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
 ECHO_T	Makefile	/^ECHO_T = $/;"	m
-EGREP	Makefile	/^EGREP = \/bin\/grep -E$/;"	m
+EGREP	Makefile	/^EGREP = \/usr\/bin\/grep -E$/;"	m
 ETAGS	Makefile	/^ETAGS = etags$/;"	m
 EXEEXT	Makefile	/^EXEEXT = $/;"	m
 EXTRA_DIST	Makefile	/^EXTRA_DIST = README.md COPYING$/;"	m
 FAIL_AND_CLEANUP	deps/hdr_histogram/hdr_histogram_log.c	38;"	d	file:
-FGREP	Makefile	/^FGREP = \/bin\/grep -F$/;"	m
-GREP	Makefile	/^GREP = \/bin\/grep$/;"	m
+GREP	Makefile	/^GREP = \/usr\/bin\/grep$/;"	m
 GZIP_ENV	Makefile	/^GZIP_ENV = --best$/;"	m
 HAVE_ASSERT_H	config.h	5;"	d
 HAVE_DIRENT_H	config.h	9;"	d
-HAVE_DLFCN_H	config.h	12;"	d
-HAVE_DRAND48	config.h	15;"	d
-HAVE_EVENT2_EVENT_H	config.h	18;"	d
-HAVE_FCNTL_H	config.h	21;"	d
-HAVE_GETOPT_H	config.h	24;"	d
-HAVE_GETTIMEOFDAY	config.h	27;"	d
-HAVE_INTTYPES_H	config.h	30;"	d
-HAVE_LIBPCRE	config.h	33;"	d
-HAVE_LIBPTHREAD	config.h	36;"	d
-HAVE_LIBZ	config.h	42;"	d
-HAVE_LIMITS_H	config.h	45;"	d
-HAVE_MALLOC	config.h	49;"	d
-HAVE_MALLOC_H	config.h	52;"	d
-HAVE_MEMCHR	config.h	55;"	d
-HAVE_MEMORY_H	config.h	58;"	d
-HAVE_MEMSET	config.h	61;"	d
-HAVE_NETINET_TCP_H	config.h	67;"	d
-HAVE_PCRE_H	config.h	70;"	d
-HAVE_PTHREAD_H	config.h	73;"	d
-HAVE_RANDOM_R	config.h	76;"	d
-HAVE_SOCKET	config.h	79;"	d
-HAVE_STDINT_H	config.h	82;"	d
-HAVE_STDLIB_H	config.h	85;"	d
-HAVE_STRERROR	config.h	88;"	d
-HAVE_STRINGS_H	config.h	91;"	d
-HAVE_STRING_H	config.h	94;"	d
-HAVE_SYS_SOCKET_H	config.h	105;"	d
-HAVE_SYS_STAT_H	config.h	108;"	d
-HAVE_SYS_TIME_H	config.h	111;"	d
-HAVE_SYS_TYPES_H	config.h	114;"	d
-HAVE_UNISTD_H	config.h	117;"	d
+HAVE_DRAND48	config.h	12;"	d
+HAVE_EVENT2_EVENT_H	config.h	15;"	d
+HAVE_FCNTL_H	config.h	18;"	d
+HAVE_GETOPT_H	config.h	21;"	d
+HAVE_GETTIMEOFDAY	config.h	24;"	d
+HAVE_INTTYPES_H	config.h	27;"	d
+HAVE_LIBPCRE	config.h	30;"	d
+HAVE_LIBPTHREAD	config.h	33;"	d
+HAVE_LIBZ	config.h	39;"	d
+HAVE_LIMITS_H	config.h	42;"	d
+HAVE_MALLOC	config.h	46;"	d
+HAVE_MALLOC_H	config.h	49;"	d
+HAVE_MEMCHR	config.h	52;"	d
+HAVE_MEMORY_H	config.h	55;"	d
+HAVE_MEMSET	config.h	58;"	d
+HAVE_NETINET_TCP_H	config.h	64;"	d
+HAVE_PCRE_H	config.h	67;"	d
+HAVE_PTHREAD_H	config.h	70;"	d
+HAVE_RANDOM_R	config.h	73;"	d
+HAVE_SOCKET	config.h	76;"	d
+HAVE_STDINT_H	config.h	79;"	d
+HAVE_STDLIB_H	config.h	82;"	d
+HAVE_STRERROR	config.h	85;"	d
+HAVE_STRINGS_H	config.h	88;"	d
+HAVE_STRING_H	config.h	91;"	d
+HAVE_SYS_SOCKET_H	config.h	102;"	d
+HAVE_SYS_STAT_H	config.h	105;"	d
+HAVE_SYS_TIME_H	config.h	108;"	d
+HAVE_SYS_TYPES_H	config.h	111;"	d
+HAVE_UNISTD_H	config.h	114;"	d
 HAVE_UNISTD_H	deps/hdr_histogram/hdr_histogram_log.c	14;"	d	file:
-HAVE_UTIME_H	config.h	120;"	d
-HAVE_ZLIB_H	config.h	123;"	d
+HAVE_UTIME_H	config.h	117;"	d
+HAVE_ZLIB_H	config.h	120;"	d
 HDR_ATOMIC_H__	deps/hdr_histogram/hdr_atomic.h	8;"	d
 HDR_COMPRESSION_COOKIE_MISMATCH	deps/hdr_histogram/hdr_histogram_log.h	13;"	d
 HDR_DEFLATE_FAIL	deps/hdr_histogram/hdr_histogram_log.h	16;"	d
@@ -156,7 +149,7 @@ IS_BIG_ENDIAN	deps/hdr_histogram/byteorder.h	47;"	d
 IS_LITTLE_ENDIAN	deps/hdr_histogram/byteorder.h	50;"	d
 ITEM_DUMPFLAGS_EXPIRED	item.h	27;"	d
 KEY_INDEX_QUEUE_MAX_SIZE	cluster_client.cpp	52;"	d	file:
-KEY_PLACEHOLDER	config_types.h	105;"	d
+KEY_PLACEHOLDER	config_types.h	106;"	d
 LATENCY_HDR_GRANULARITY	run_stats_types.h	29;"	d
 LATENCY_HDR_MAX_VALUE	run_stats_types.h	23;"	d
 LATENCY_HDR_MIN_VALUE	run_stats_types.h	22;"	d
@@ -165,7 +158,6 @@ LATENCY_HDR_SEC_MAX_VALUE	run_stats_types.h	26;"	d
 LATENCY_HDR_SEC_MIN_VALUE	run_stats_types.h	25;"	d
 LATENCY_HDR_SEC_SIGDIGTS	run_stats_types.h	27;"	d
 LATENCY_HDR_SIGDIGTS	run_stats_types.h	24;"	d
-LD	Makefile	/^LD = \/usr\/bin\/ld -m elf_x86_64$/;"	m
 LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
 LE_16	deps/hdr_histogram/byteorder.h	89;"	d
 LE_16	deps/hdr_histogram/byteorder.h	97;"	d
@@ -183,22 +175,14 @@ LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
 LIBS	Makefile	/^LIBS = -lpthread -lz -lpcre $/;"	m
 LIBSSL_CFLAGS	Makefile	/^LIBSSL_CFLAGS = $/;"	m
 LIBSSL_LIBS	Makefile	/^LIBSSL_LIBS = -lssl$/;"	m
-LIBTOOL	Makefile	/^LIBTOOL = $(SHELL) $(top_builddir)\/libtool$/;"	m
-LINK	Makefile	/^LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \\$/;"	m
-LIPO	Makefile	/^LIPO = $/;"	m
-LN_S	Makefile	/^LN_S = ln -s$/;"	m
+LINK	Makefile	/^LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@$/;"	m
 LOGLEVEL_DEBUG	memtier_benchmark.h	30;"	d
 LOGLEVEL_ERROR	memtier_benchmark.h	29;"	d
 LOG_MAJOR_VERSION	deps/hdr_histogram/hdr_histogram_log.c	699;"	d	file:
 LOG_VERSION	deps/hdr_histogram/hdr_histogram_log.c	698;"	d	file:
-LTCOMPILE	Makefile	/^LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \\$/;"	m
-LTCXXCOMPILE	Makefile	/^LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \\$/;"	m
 LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
-LT_OBJDIR	config.h	126;"	d
-LT_SYS_LIBRARY_PATH	Makefile	/^LT_SYS_LIBRARY_PATH = $/;"	m
 MAIN_CONNECTION	client.h	41;"	d
-MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/ljkim\/memtier_benchmark\/missing makeinfo$/;"	m
-MANIFEST_TOOL	Makefile	/^MANIFEST_TOOL = :$/;"	m
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/ljkim\/memtier_failover_modified\/missing makeinfo$/;"	m
 MANS	Makefile	/^MANS = $(dist_man1_MANS)$/;"	m
 MAX	deps/hdr_histogram/hdr_histogram_log.c	/^    INIT, TAG, BEGIN_TIMESTAMP, INTERVAL, MAX, HISTOGRAM, DONE$/;"	e	enum:parse_log_state	file:
 MAX	run_stats.cpp	39;"	d	file:
@@ -212,39 +196,34 @@ MEMTIER_BENCHMARK_RUN_STATS_TYPES_H	run_stats_types.h	20;"	d
 MEMTIER_BENCHMARK_SHARD_CONNECTION_H	shard_connection.h	20;"	d
 MEMTIER_BINARY	tests/include.py	/^MEMTIER_BINARY = os.environ.get("MEMTIER_BINARY", "memtier_benchmark")$/;"	v
 MIN	run_stats.cpp	38;"	d	file:
-MKDIR_P	Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MKDIR_P	Makefile	/^MKDIR_P = \/usr\/bin\/mkdir -p$/;"	m
 MOVED_MSG_PREFIX	cluster_client.cpp	54;"	d	file:
 MOVED_MSG_PREFIX_LEN	cluster_client.cpp	55;"	d	file:
-NESTED_ARRAY	JSON_handler.h	/^    NESTED_ARRAY    \/\/ []$/;"	e	enum:__anon3
-NESTED_GENERAL	JSON_handler.h	/^    NESTED_GENERAL, \/\/ {}$/;"	e	enum:__anon3
-NM	Makefile	/^NM = \/usr\/bin\/nm -B$/;"	m
-NMEDIT	Makefile	/^NMEDIT = $/;"	m
+NESTED_ARRAY	JSON_handler.h	/^    NESTED_ARRAY    \/\/ []$/;"	e	enum:__anon1
+NESTED_GENERAL	JSON_handler.h	/^    NESTED_GENERAL, \/\/ {}$/;"	e	enum:__anon1
 NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
 NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
 NROFF	Makefile	/^NROFF = nroff$/;"	m
-OBJDUMP	Makefile	/^OBJDUMP = objdump$/;"	m
 OBJECT_GENERATOR_KEY_GAUSSIAN	obj_gen.h	77;"	d
 OBJECT_GENERATOR_KEY_GET_ITER	obj_gen.h	75;"	d
 OBJECT_GENERATOR_KEY_ITERATORS	obj_gen.h	73;"	d
 OBJECT_GENERATOR_KEY_RANDOM	obj_gen.h	76;"	d
 OBJECT_GENERATOR_KEY_SET_ITER	obj_gen.h	74;"	d
 OBJEXT	Makefile	/^OBJEXT = o$/;"	m
-OTOOL	Makefile	/^OTOOL = $/;"	m
-OTOOL64	Makefile	/^OTOOL64 = $/;"	m
 PACKAGE	Makefile	/^PACKAGE = memtier_benchmark$/;"	m
-PACKAGE	config.h	129;"	d
+PACKAGE	config.h	123;"	d
 PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = yossigo@gmail.com$/;"	m
-PACKAGE_BUGREPORT	config.h	132;"	d
+PACKAGE_BUGREPORT	config.h	126;"	d
 PACKAGE_NAME	Makefile	/^PACKAGE_NAME = memtier_benchmark$/;"	m
-PACKAGE_NAME	config.h	135;"	d
+PACKAGE_NAME	config.h	129;"	d
 PACKAGE_STRING	Makefile	/^PACKAGE_STRING = memtier_benchmark 1.3.0$/;"	m
-PACKAGE_STRING	config.h	138;"	d
+PACKAGE_STRING	config.h	132;"	d
 PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = memtier_benchmark$/;"	m
-PACKAGE_TARNAME	config.h	141;"	d
+PACKAGE_TARNAME	config.h	135;"	d
 PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
-PACKAGE_URL	config.h	144;"	d
+PACKAGE_URL	config.h	138;"	d
 PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 1.3.0$/;"	m
-PACKAGE_VERSION	config.h	147;"	d
+PACKAGE_VERSION	config.h	141;"	d
 PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
 PKG_CONFIG	Makefile	/^PKG_CONFIG = \/usr\/bin\/pkg-config$/;"	m
 PKG_CONFIG_LIBDIR	Makefile	/^PKG_CONFIG_LIBDIR = $/;"	m
@@ -254,98 +233,96 @@ POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
 PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
 PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
 PROGRAMS	Makefile	/^PROGRAMS = $(bin_PROGRAMS)$/;"	m
-PROTOCOL_BINARY_CMD_ADD	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_ADD = 0x02,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_ADDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_ADDQ = 0x12,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_APPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_APPEND = 0x0e,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_APPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_APPENDQ = 0x19,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_DECREMENT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DECREMENT = 0x06,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_DECREMENTQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DECREMENTQ = 0x16,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_DELETE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DELETE = 0x04,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_DELETEQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DELETEQ = 0x14,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_DEL_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DEL_VBUCKET = 0x3f,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_FLUSH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_FLUSH = 0x08,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_FLUSHQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_FLUSHQ = 0x18,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GAT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GAT = 0x1d,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GATK	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GATK = 0x23,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GATKQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GATKQ = 0x24,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GATQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GATQ = 0x1e,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GET = 0x00,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GETK	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GETK = 0x0c,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GETKQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GETKQ = 0x0d,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GETQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GETQ = 0x09,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_GET_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GET_VBUCKET = 0x3e,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_INCREMENT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_INCREMENT = 0x05,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_INCREMENTQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_INCREMENTQ = 0x15,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_LAST_RESERVED	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_LAST_RESERVED = 0xef,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_NOOP	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_NOOP = 0x0a,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_PREPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_PREPEND = 0x0f,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_PREPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_PREPENDQ = 0x1a,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_QUIT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_QUIT = 0x07,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_QUITQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_QUITQ = 0x17,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RAPPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RAPPEND   = 0x33,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RAPPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RAPPENDQ  = 0x34,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RDECR	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDECR     = 0x3b,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RDECRQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDECRQ    = 0x3c,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RDELETE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDELETE   = 0x37,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RDELETEQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDELETEQ  = 0x38,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_REPLACE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_REPLACE = 0x03,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_REPLACEQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_REPLACEQ = 0x13,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RGET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RGET      = 0x30,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RINCR	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RINCR     = 0x39,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RINCRQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RINCRQ    = 0x3a,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RPREPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RPREPEND  = 0x35,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RPREPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RPREPENDQ = 0x36,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RSET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RSET      = 0x31,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_RSETQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RSETQ     = 0x32,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_SASL_AUTH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SASL_AUTH = 0x21,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_SASL_LIST_MECHS	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SASL_LIST_MECHS = 0x20,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_SASL_STEP	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SASL_STEP = 0x22,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_SCRUB	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SCRUB = 0xf0$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_SET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SET = 0x01,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_SETQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SETQ = 0x11,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_SET_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SET_VBUCKET = 0x3d,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_STAT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_STAT = 0x10,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_END	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_END = 0x47,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_START	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_START = 0x46,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_CONNECT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_CONNECT = 0x40,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_DELETE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_DELETE = 0x42,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_FLUSH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_FLUSH = 0x43,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_MUTATION	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_MUTATION = 0x41,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_OPAQUE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_OPAQUE = 0x44,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TAP_VBUCKET_SET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_VBUCKET_SET = 0x45,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_TOUCH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TOUCH = 0x1c,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_VERBOSITY	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_VERBOSITY = 0x1b,$/;"	e	enum:__anon6
-PROTOCOL_BINARY_CMD_VERSION	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_VERSION = 0x0b,$/;"	e	enum:__anon6
+PROTOCOL_BINARY_CMD_ADD	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_ADD = 0x02,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_ADDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_ADDQ = 0x12,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_APPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_APPEND = 0x0e,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_APPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_APPENDQ = 0x19,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_DECREMENT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DECREMENT = 0x06,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_DECREMENTQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DECREMENTQ = 0x16,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_DELETE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DELETE = 0x04,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_DELETEQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DELETEQ = 0x14,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_DEL_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_DEL_VBUCKET = 0x3f,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_FLUSH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_FLUSH = 0x08,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_FLUSHQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_FLUSHQ = 0x18,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GAT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GAT = 0x1d,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GATK	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GATK = 0x23,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GATKQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GATKQ = 0x24,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GATQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GATQ = 0x1e,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GET = 0x00,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GETK	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GETK = 0x0c,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GETKQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GETKQ = 0x0d,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GETQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GETQ = 0x09,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_GET_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_GET_VBUCKET = 0x3e,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_INCREMENT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_INCREMENT = 0x05,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_INCREMENTQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_INCREMENTQ = 0x15,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_LAST_RESERVED	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_LAST_RESERVED = 0xef,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_NOOP	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_NOOP = 0x0a,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_PREPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_PREPEND = 0x0f,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_PREPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_PREPENDQ = 0x1a,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_QUIT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_QUIT = 0x07,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_QUITQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_QUITQ = 0x17,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RAPPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RAPPEND   = 0x33,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RAPPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RAPPENDQ  = 0x34,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RDECR	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDECR     = 0x3b,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RDECRQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDECRQ    = 0x3c,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RDELETE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDELETE   = 0x37,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RDELETEQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RDELETEQ  = 0x38,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_REPLACE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_REPLACE = 0x03,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_REPLACEQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_REPLACEQ = 0x13,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RGET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RGET      = 0x30,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RINCR	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RINCR     = 0x39,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RINCRQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RINCRQ    = 0x3a,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RPREPEND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RPREPEND  = 0x35,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RPREPENDQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RPREPENDQ = 0x36,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RSET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RSET      = 0x31,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_RSETQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_RSETQ     = 0x32,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_SASL_AUTH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SASL_AUTH = 0x21,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_SASL_LIST_MECHS	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SASL_LIST_MECHS = 0x20,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_SASL_STEP	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SASL_STEP = 0x22,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_SCRUB	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SCRUB = 0xf0$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_SET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SET = 0x01,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_SETQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SETQ = 0x11,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_SET_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_SET_VBUCKET = 0x3d,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_STAT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_STAT = 0x10,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_END	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_END = 0x47,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_START	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_CHECKPOINT_START = 0x46,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_CONNECT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_CONNECT = 0x40,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_DELETE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_DELETE = 0x42,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_FLUSH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_FLUSH = 0x43,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_MUTATION	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_MUTATION = 0x41,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_OPAQUE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_OPAQUE = 0x44,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TAP_VBUCKET_SET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TAP_VBUCKET_SET = 0x45,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_TOUCH	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_TOUCH = 0x1c,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_VERBOSITY	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_VERBOSITY = 0x1b,$/;"	e	enum:__anon10
+PROTOCOL_BINARY_CMD_VERSION	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_CMD_VERSION = 0x0b,$/;"	e	enum:__anon10
 PROTOCOL_BINARY_H	libmemcached_protocol/binary.h	37;"	d
-PROTOCOL_BINARY_RAW_BYTES	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RAW_BYTES = 0x00$/;"	e	enum:__anon7
-PROTOCOL_BINARY_REQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_REQ = 0x80,$/;"	e	enum:__anon4
-PROTOCOL_BINARY_RES	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RES = 0x81$/;"	e	enum:__anon4
-PROTOCOL_BINARY_RESPONSE_AUTH_CONTINUE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_AUTH_CONTINUE = 0x21,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_AUTH_ERROR	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_AUTH_ERROR = 0x20,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_DELTA_BADVAL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_DELTA_BADVAL = 0x06,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_E2BIG	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_E2BIG = 0x03,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_EBUSY	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_EBUSY = 0x85,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_EINTERNAL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_EINTERNAL = 0x84,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_EINVAL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_EINVAL = 0x04,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_ENOMEM	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_ENOMEM = 0x82,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_ETMPFAIL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_ETMPFAIL = 0x86$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_KEY_EEXISTS	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_KEY_EEXISTS = 0x02,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_KEY_ENOENT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_KEY_ENOENT = 0x01,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_NOT_MY_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_NOT_MY_VBUCKET = 0x07,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_NOT_STORED	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_NOT_STORED = 0x05,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_NOT_SUPPORTED	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_NOT_SUPPORTED = 0x83,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_SUCCESS	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_SUCCESS = 0x00,$/;"	e	enum:__anon5
-PROTOCOL_BINARY_RESPONSE_UNKNOWN_COMMAND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_UNKNOWN_COMMAND = 0x81,$/;"	e	enum:__anon5
-RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
-SED	Makefile	/^SED = \/bin\/sed$/;"	m
+PROTOCOL_BINARY_RAW_BYTES	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RAW_BYTES = 0x00$/;"	e	enum:__anon11
+PROTOCOL_BINARY_REQ	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_REQ = 0x80,$/;"	e	enum:__anon8
+PROTOCOL_BINARY_RES	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RES = 0x81$/;"	e	enum:__anon8
+PROTOCOL_BINARY_RESPONSE_AUTH_CONTINUE	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_AUTH_CONTINUE = 0x21,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_AUTH_ERROR	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_AUTH_ERROR = 0x20,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_DELTA_BADVAL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_DELTA_BADVAL = 0x06,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_E2BIG	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_E2BIG = 0x03,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_EBUSY	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_EBUSY = 0x85,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_EINTERNAL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_EINTERNAL = 0x84,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_EINVAL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_EINVAL = 0x04,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_ENOMEM	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_ENOMEM = 0x82,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_ETMPFAIL	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_ETMPFAIL = 0x86$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_KEY_EEXISTS	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_KEY_EEXISTS = 0x02,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_KEY_ENOENT	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_KEY_ENOENT = 0x01,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_NOT_MY_VBUCKET	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_NOT_MY_VBUCKET = 0x07,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_NOT_STORED	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_NOT_STORED = 0x05,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_NOT_SUPPORTED	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_NOT_SUPPORTED = 0x83,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_SUCCESS	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_SUCCESS = 0x00,$/;"	e	enum:__anon9
+PROTOCOL_BINARY_RESPONSE_UNKNOWN_COMMAND	libmemcached_protocol/binary.h	/^        PROTOCOL_BINARY_RESPONSE_UNKNOWN_COMMAND = 0x81,$/;"	e	enum:__anon9
 SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
 SHELL	Makefile	/^SHELL = \/bin\/bash$/;"	m
 SIZEOF_COMPRESSION_FLYWEIGHT	deps/hdr_histogram/hdr_histogram_log.c	162;"	d	file:
 SIZEOF_ENCODING_FLYWEIGHT_V0	deps/hdr_histogram/hdr_histogram_log.c	160;"	d	file:
 SIZEOF_ENCODING_FLYWEIGHT_V1	deps/hdr_histogram/hdr_histogram_log.c	161;"	d	file:
 SOURCES	Makefile	/^SOURCES = $(memtier_benchmark_SOURCES)$/;"	m
-STDC_HEADERS	config.h	153;"	d
-STRIP	Makefile	/^STRIP = strip$/;"	m
+STDC_HEADERS	config.h	147;"	d
+STRIP	Makefile	/^STRIP = $/;"	m
 TAG	deps/hdr_histogram/hdr_histogram_log.c	/^    INIT, TAG, BEGIN_TIMESTAMP, INTERVAL, MAX, HISTOGRAM, DONE$/;"	e	enum:parse_log_state	file:
 TAP_CONNECT_CHECKPOINT	libmemcached_protocol/binary.h	593;"	d
 TAP_CONNECT_FLAG_BACKFILL	libmemcached_protocol/binary.h	557;"	d
@@ -361,7 +338,7 @@ TLS_CACERT	tests/include.py	/^TLS_CACERT = os.environ.get("TLS_CACERT", "")$/;"	
 TLS_CERT	tests/include.py	/^TLS_CERT = os.environ.get("TLS_CERT", "")$/;"	v
 TLS_KEY	tests/include.py	/^TLS_KEY = os.environ.get("TLS_KEY", "")$/;"	v
 USEC_FORMAT	run_stats.cpp	270;"	d	file:
-USE_TLS	config.h	156;"	d
+USE_TLS	config.h	150;"	d
 V0_COMPRESSION_COOKIE	deps/hdr_histogram/hdr_histogram_log.c	/^static const uint32_t V0_COMPRESSION_COOKIE = 0x1c849309;$/;"	v	file:
 V0_ENCODING_COOKIE	deps/hdr_histogram/hdr_histogram_log.c	/^static const uint32_t V0_ENCODING_COOKIE    = 0x1c849308;$/;"	v	file:
 V1_COMPRESSION_COOKIE	deps/hdr_histogram/hdr_histogram_log.c	/^static const uint32_t V1_COMPRESSION_COOKIE = 0x1c849302;$/;"	v	file:
@@ -369,7 +346,7 @@ V1_ENCODING_COOKIE	deps/hdr_histogram/hdr_histogram_log.c	/^static const uint32_
 V2_COMPRESSION_COOKIE	deps/hdr_histogram/hdr_histogram_log.c	/^static const uint32_t V2_COMPRESSION_COOKIE = 0x1c849304;$/;"	v	file:
 V2_ENCODING_COOKIE	deps/hdr_histogram/hdr_histogram_log.c	/^static const uint32_t V2_ENCODING_COOKIE = 0x1c849303;$/;"	v	file:
 VERSION	Makefile	/^VERSION = 1.3.0$/;"	m
-VERSION	config.h	159;"	d
+VERSION	config.h	153;"	d
 WIN32_LEAN_AND_MEAN	deps/hdr_histogram/hdr_time.c	12;"	d	file:
 _CLIENT_H	client.h	20;"	d
 _CONFIG_TYPES_H	config_types.h	20;"	d
@@ -393,16 +370,14 @@ __openssl_locks	memtier_benchmark.cpp	/^static pthread_mutex_t *__openssl_locks;
 __openssl_thread_id	memtier_benchmark.cpp	/^static unsigned long __openssl_thread_id(void)$/;"	f	file:
 _next_fp	deps/hdr_histogram/hdr_histogram.h	/^    bool (* _next_fp)(struct hdr_iter* iter);$/;"	m	struct:hdr_iter
 a	config_types.h	/^    unsigned int a;$/;"	m	struct:config_ratio
-abs_builddir	Makefile	/^abs_builddir = \/home\/ljkim\/memtier_benchmark$/;"	m
-abs_srcdir	Makefile	/^abs_srcdir = \/home\/ljkim\/memtier_benchmark$/;"	m
-abs_top_builddir	Makefile	/^abs_top_builddir = \/home\/ljkim\/memtier_benchmark$/;"	m
-abs_top_srcdir	Makefile	/^abs_top_srcdir = \/home\/ljkim\/memtier_benchmark$/;"	m
+abs_builddir	Makefile	/^abs_builddir = \/home\/ljkim\/memtier_failover_modified$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/home\/ljkim\/memtier_failover_modified$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/home\/ljkim\/memtier_failover_modified$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/home\/ljkim\/memtier_failover_modified$/;"	m
 abstract_protocol	protocol.cpp	/^abstract_protocol::abstract_protocol() :$/;"	f	class:abstract_protocol
 abstract_protocol	protocol.h	/^class abstract_protocol {$/;"	c
-ac_ct_AR	Makefile	/^ac_ct_AR = ar$/;"	m
 ac_ct_CC	Makefile	/^ac_ct_CC = gcc$/;"	m
 ac_ct_CXX	Makefile	/^ac_ct_CXX = g++$/;"	m
-ac_ct_DUMPBIN	Makefile	/^ac_ct_DUMPBIN = $/;"	m
 ac_fn_c_check_func	configure	/^ac_fn_c_check_func ()$/;"	f
 ac_fn_c_check_header_compile	configure	/^ac_fn_c_check_header_compile ()$/;"	f
 ac_fn_c_check_header_mongrel	configure	/^ac_fn_c_check_header_mongrel ()$/;"	f
@@ -412,8 +387,6 @@ ac_fn_c_try_cpp	configure	/^ac_fn_c_try_cpp ()$/;"	f
 ac_fn_c_try_link	configure	/^ac_fn_c_try_link ()$/;"	f
 ac_fn_c_try_run	configure	/^ac_fn_c_try_run ()$/;"	f
 ac_fn_cxx_try_compile	configure	/^ac_fn_cxx_try_compile ()$/;"	f
-ac_fn_cxx_try_cpp	configure	/^ac_fn_cxx_try_cpp ()$/;"	f
-ac_fn_cxx_try_link	configure	/^ac_fn_cxx_try_link ()$/;"	f
 add	run_stats_types.cpp	/^void ar_totals_cmd::add(const ar_totals_cmd& other) {$/;"	f	class:ar_totals_cmd
 add	run_stats_types.cpp	/^void totals::add(const totals& other) {$/;"	f	class:totals
 add	run_stats_types.cpp	/^void totals_cmd::add(const totals_cmd& other) {$/;"	f	class:totals_cmd
@@ -441,7 +414,7 @@ am__can_run_installinfo	Makefile	/^am__can_run_installinfo = \\$/;"	m
 am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
 am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
 am__define_uniq_tagged_files	Makefile	/^am__define_uniq_tagged_files = \\$/;"	m
-am__depfiles_maybe	Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__depfiles_remade	Makefile	/^am__depfiles_remade = .\/$(DEPDIR)\/memtier_benchmark-JSON_handler.Po \\$/;"	m
 am__dirstamp	Makefile	/^am__dirstamp = $(am__leading_dot)dirstamp$/;"	m
 am__distuninstallcheck_listfiles	Makefile	/^am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \\$/;"	m
 am__include	Makefile	/^am__include = include$/;"	m
@@ -452,6 +425,7 @@ am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
 am__make_dryrun	Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
 am__make_keepgoing	Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
 am__make_running_with_option	Makefile	/^am__make_running_with_option = \\$/;"	m
+am__maybe_remake_depfiles	Makefile	/^am__maybe_remake_depfiles = depfiles$/;"	m
 am__mv	Makefile	/^am__mv = mv -f$/;"	m
 am__nobase_list	Makefile	/^am__nobase_list = $(am__nobase_strip_setup); \\$/;"	m
 am__nobase_strip	Makefile	/^am__nobase_strip = \\$/;"	m
@@ -577,60 +551,56 @@ betoh64	deps/hdr_histogram/byteorder.h	37;"	d
 beutify	JSON_handler.cpp	/^void json_handler::beutify(bool only_tabs)$/;"	f	class:json_handler
 bin_PROGRAMS	Makefile	/^bin_PROGRAMS = memtier_benchmark$(EXEEXT)$/;"	m
 bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon15::__anon16	typeref:struct:__anon15::__anon16::__anon17
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon18::__anon19	typeref:struct:__anon18::__anon19::__anon20
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon21::__anon22	typeref:struct:__anon21::__anon22::__anon23
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon24::__anon25	typeref:struct:__anon24::__anon25::__anon26
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon27::__anon28	typeref:struct:__anon27::__anon28::__anon29
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon30::__anon31	typeref:struct:__anon30::__anon31::__anon32
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon33::__anon34	typeref:struct:__anon33::__anon34::__anon35
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon36::__anon37	typeref:struct:__anon36::__anon37::__anon38
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon39::__anon40	typeref:struct:__anon39::__anon40::__anon41
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon42::__anon43	typeref:struct:__anon42::__anon43::__anon44
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon45::__anon46	typeref:struct:__anon45::__anon46::__anon47
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon50::__anon51	typeref:struct:__anon50::__anon51::__anon52
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon19::__anon20	typeref:struct:__anon19::__anon20::__anon21
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon22::__anon23	typeref:struct:__anon22::__anon23::__anon24
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon25::__anon26	typeref:struct:__anon25::__anon26::__anon27
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon28::__anon29	typeref:struct:__anon28::__anon29::__anon30
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon31::__anon32	typeref:struct:__anon31::__anon32::__anon33
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon34::__anon35	typeref:struct:__anon34::__anon35::__anon36
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon37::__anon38	typeref:struct:__anon37::__anon38::__anon39
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon40::__anon41	typeref:struct:__anon40::__anon41::__anon42
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon43::__anon44	typeref:struct:__anon43::__anon44::__anon45
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon46::__anon47	typeref:struct:__anon46::__anon47::__anon48
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon49::__anon50	typeref:struct:__anon49::__anon50::__anon51
 body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon54::__anon55	typeref:struct:__anon54::__anon55::__anon56
-body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon57::__anon58	typeref:struct:__anon57::__anon58::__anon59
-bodylen	libmemcached_protocol/binary.h	/^            uint32_t bodylen;$/;"	m	struct:__anon10::__anon11
-bodylen	libmemcached_protocol/binary.h	/^            uint32_t bodylen;$/;"	m	struct:__anon8::__anon9
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon58::__anon59	typeref:struct:__anon58::__anon59::__anon60
+body	libmemcached_protocol/binary.h	/^            } body;$/;"	m	struct:__anon61::__anon62	typeref:struct:__anon61::__anon62::__anon63
+bodylen	libmemcached_protocol/binary.h	/^            uint32_t bodylen;$/;"	m	struct:__anon12::__anon13
+bodylen	libmemcached_protocol/binary.h	/^            uint32_t bodylen;$/;"	m	struct:__anon14::__anon15
 bucket_count	deps/hdr_histogram/hdr_histogram.h	/^    int32_t bucket_count;$/;"	m	struct:hdr_histogram
 bucket_count	deps/hdr_histogram/hdr_histogram.h	/^    int32_t bucket_count;$/;"	m	struct:hdr_histogram_bucket_config
 buckets_needed_to_cover_value	deps/hdr_histogram/hdr_histogram.c	/^static int32_t buckets_needed_to_cover_value(int64_t value, int32_t sub_bucket_count, int32_t unit_magnitude)$/;"	f	file:
-build	Makefile	/^build = x86_64-pc-linux-gnu$/;"	m
 build_alias	Makefile	/^build_alias = $/;"	m
-build_cpu	Makefile	/^build_cpu = x86_64$/;"	m
-build_os	Makefile	/^build_os = linux-gnu$/;"	m
-build_triplet	Makefile	/^build_triplet = x86_64-pc-linux-gnu$/;"	m
-build_vendor	Makefile	/^build_vendor = pc$/;"	m
 builddir	Makefile	/^builddir = .$/;"	m
 bulk_el	protocol.h	/^    bulk_el() : mbulk_element(mbulk_element_bulk), value(NULL), value_len(0) {;}$/;"	f	class:bulk_el
 bulk_el	protocol.h	/^class bulk_el : public mbulk_element {$/;"	c
 bulks_count	protocol.h	/^    int bulks_count;$/;"	m	class:mbulk_size_el
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[24];$/;"	m	union:__anon10
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[24];$/;"	m	union:__anon8
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 16];$/;"	m	union:__anon45
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 20];$/;"	m	union:__anon24
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon18
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon30
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon33
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon36
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon39
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon42
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 8];$/;"	m	union:__anon21
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 8];$/;"	m	union:__anon50
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + sizeof(vbucket_state_t)];$/;"	m	union:__anon54
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[24];$/;"	m	union:__anon12
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[24];$/;"	m	union:__anon14
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 16];$/;"	m	union:__anon49
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 20];$/;"	m	union:__anon28
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon22
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon34
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon37
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon40
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon43
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 4];$/;"	m	union:__anon46
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 8];$/;"	m	union:__anon25
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + 8];$/;"	m	union:__anon54
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header) + sizeof(vbucket_state_t)];$/;"	m	union:__anon58
 bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_request_header)];$/;"	m	union:protocol_binary_request_no_extras
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header) + 4];$/;"	m	union:__anon15
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header) + 8];$/;"	m	union:__anon27
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header) + sizeof(vbucket_state_t)];$/;"	m	union:__anon57
-bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header)];$/;"	m	union:__anon13
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header) + 4];$/;"	m	union:__anon19
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header) + 8];$/;"	m	union:__anon31
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header) + sizeof(vbucket_state_t)];$/;"	m	union:__anon61
+bytes	libmemcached_protocol/binary.h	/^        uint8_t bytes[sizeof(protocol_binary_response_header)];$/;"	m	union:__anon17
 bytes	run_stats_types.cpp	/^unsigned long int ar_one_sec_cmd_stats::bytes() {$/;"	f	class:ar_one_sec_cmd_stats
 calc_hslot_crc16_cluster	cluster_client.cpp	/^static uint32_t calc_hslot_crc16_cluster(const char *str, size_t length)$/;"	f	file:
-cas	libmemcached_protocol/binary.h	/^            uint64_t cas;$/;"	m	struct:__anon10::__anon11
-cas	libmemcached_protocol/binary.h	/^            uint64_t cas;$/;"	m	struct:__anon8::__anon9
+cas	libmemcached_protocol/binary.h	/^            uint64_t cas;$/;"	m	struct:__anon12::__anon13
+cas	libmemcached_protocol/binary.h	/^            uint64_t cas;$/;"	m	struct:__anon14::__anon15
 cg_thread	memtier_benchmark.cpp	/^    cg_thread(unsigned int id, benchmark_config* config, object_generator* obj_gen) :$/;"	f	struct:cg_thread
 cg_thread	memtier_benchmark.cpp	/^struct cg_thread {$/;"	s	file:
 cg_thread_start	memtier_benchmark.cpp	/^static void* cg_thread_start(void *t)$/;"	f	file:
+change_port	config_types.cpp	/^int server_addr::change_port(const char* port)$/;"	f	class:server_addr
 ci_addr	config_types.h	/^    struct sockaddr *ci_addr;$/;"	m	struct:connect_info	typeref:struct:connect_info::sockaddr
 ci_addrlen	config_types.h	/^    socklen_t ci_addrlen;$/;"	m	struct:connect_info
 ci_family	config_types.h	/^    int ci_family;$/;"	m	struct:connect_info
@@ -671,7 +641,7 @@ command_name	config_types.h	/^    std::string command_name;$/;"	m	struct:arbitra
 commands_list	config_types.h	/^    std::vector<arbitrary_command> commands_list;$/;"	m	struct:arbitrary_command_list
 completions_DATA	Makefile	/^completions_DATA = bash-completion\/memtier_benchmark$/;"	m
 completionsdir	Makefile	/^completionsdir = $(BASH_COMPLETION_DIR)$/;"	m
-compression_flyweight_t	deps/hdr_histogram/hdr_histogram_log.c	/^} compression_flyweight_t;$/;"	t	typeref:struct:__anon65	file:
+compression_flyweight_t	deps/hdr_histogram/hdr_histogram_log.c	/^} compression_flyweight_t;$/;"	t	typeref:struct:__anon6	file:
 config_init_defaults	memtier_benchmark.cpp	/^static void config_init_defaults(struct benchmark_config *cfg)$/;"	f	file:
 config_parse_args	memtier_benchmark.cpp	/^static int config_parse_args(int argc, char *argv[], struct benchmark_config *cfg)$/;"	f	file:
 config_print	memtier_benchmark.cpp	/^static void config_print(FILE *file, struct benchmark_config *cfg)$/;"	f	file:
@@ -695,24 +665,25 @@ conn_in_progress	shard_connection.h	/^enum connection_state { conn_disconnected,
 connect	client.cpp	/^int client::connect(void)$/;"	f	class:client
 connect	cluster_client.cpp	/^int cluster_client::connect(void) {$/;"	f	class:cluster_client
 connect	shard_connection.cpp	/^int shard_connection::connect(struct connect_info* addr) {$/;"	f	class:shard_connection
+connect_cnt	shard_connection.h	/^	int connect_cnt;$/;"	m	class:shard_connection
 connect_info	config_types.h	/^struct connect_info {$/;"	s
 connect_shard_connection	cluster_client.cpp	/^bool cluster_client::connect_shard_connection(shard_connection* sc, char* address, char* port) {$/;"	f	class:cluster_client
 connection_state	shard_connection.h	/^enum connection_state { conn_disconnected, conn_in_progress, conn_connected };$/;"	g
 connections_manager	connections_manager.h	/^class connections_manager {$/;"	c
 const_type	config_types.h	/^    const_type      = 0,$/;"	e	enum:command_arg_type
 conversion_ratio	deps/hdr_histogram/hdr_histogram.h	/^    double conversion_ratio;$/;"	m	struct:hdr_histogram
-conversion_ratio_bits	deps/hdr_histogram/hdr_histogram_log.c	/^    uint64_t conversion_ratio_bits;$/;"	m	struct:__anon64	file:
-cookie	deps/hdr_histogram/hdr_histogram_log.c	/^    uint32_t cookie;$/;"	m	struct:__anon63	file:
-cookie	deps/hdr_histogram/hdr_histogram_log.c	/^    uint32_t cookie;$/;"	m	struct:__anon64	file:
-cookie	deps/hdr_histogram/hdr_histogram_log.c	/^    uint32_t cookie;$/;"	m	struct:__anon65	file:
+conversion_ratio_bits	deps/hdr_histogram/hdr_histogram_log.c	/^    uint64_t conversion_ratio_bits;$/;"	m	struct:__anon5	file:
+cookie	deps/hdr_histogram/hdr_histogram_log.c	/^    uint32_t cookie;$/;"	m	struct:__anon4	file:
+cookie	deps/hdr_histogram/hdr_histogram_log.c	/^    uint32_t cookie;$/;"	m	struct:__anon5	file:
+cookie	deps/hdr_histogram/hdr_histogram_log.c	/^    uint32_t cookie;$/;"	m	struct:__anon6	file:
 count	deps/hdr_histogram/hdr_histogram.h	/^    int64_t count;$/;"	m	struct:hdr_iter
 count_added_in_this_iteration_step	deps/hdr_histogram/hdr_histogram.h	/^    int64_t count_added_in_this_iteration_step;$/;"	m	struct:hdr_iter_linear
 count_added_in_this_iteration_step	deps/hdr_histogram/hdr_histogram.h	/^    int64_t count_added_in_this_iteration_step;$/;"	m	struct:hdr_iter_log
 count_added_in_this_iteration_step	deps/hdr_histogram/hdr_histogram.h	/^    int64_t count_added_in_this_iteration_step;$/;"	m	struct:hdr_iter_recorded
 count_leading_zeros_64	deps/hdr_histogram/hdr_histogram.c	/^static int32_t count_leading_zeros_64(int64_t value)$/;"	f	file:
 counts	deps/hdr_histogram/hdr_histogram.h	/^    int64_t* counts;$/;"	m	struct:hdr_histogram
-counts	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t counts[1];$/;"	m	struct:__anon63	file:
-counts	deps/hdr_histogram/hdr_histogram_log.c	/^    uint8_t counts[1];$/;"	m	struct:__anon64	file:
+counts	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t counts[1];$/;"	m	struct:__anon4	file:
+counts	deps/hdr_histogram/hdr_histogram_log.c	/^    uint8_t counts[1];$/;"	m	struct:__anon5	file:
 counts_get_direct	deps/hdr_histogram/hdr_histogram.c	/^static int64_t counts_get_direct(const struct hdr_histogram* h, int32_t index)$/;"	f	file:
 counts_get_normalised	deps/hdr_histogram/hdr_histogram.c	/^static int64_t counts_get_normalised(const struct hdr_histogram* h, int32_t index)$/;"	f	file:
 counts_inc_normalised	deps/hdr_histogram/hdr_histogram.c	/^static void counts_inc_normalised($/;"	f	file:
@@ -733,7 +704,7 @@ create_shard_connection	cluster_client.cpp	/^shard_connection* cluster_client::c
 cumulative_count	deps/hdr_histogram/hdr_histogram.h	/^    int64_t cumulative_count;$/;"	m	struct:hdr_iter
 d	deps/hdr_histogram/hdr_histogram_log.c	/^    double d;$/;"	m	union:uint64_dbl_cvt	file:
 data	config_types.h	/^    std::string data;$/;"	m	struct:command_arg
-data	deps/hdr_histogram/hdr_histogram_log.c	/^    uint8_t data[1];$/;"	m	struct:__anon65	file:
+data	deps/hdr_histogram/hdr_histogram_log.c	/^    uint8_t data[1];$/;"	m	struct:__anon6	file:
 data_import	memtier_benchmark.h	/^    const char *data_import;$/;"	m	struct:benchmark_config
 data_object	obj_gen.cpp	/^data_object::data_object() :$/;"	f	class:data_object
 data_object	obj_gen.h	/^class data_object {$/;"	c
@@ -751,12 +722,12 @@ data_type	config_types.h	/^    data_type       = 2,$/;"	e	enum:command_arg_type
 data_verify	memtier_benchmark.h	/^    int data_verify;$/;"	m	struct:benchmark_config
 datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
 datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
-datatype	libmemcached_protocol/binary.h	/^            uint8_t datatype;$/;"	m	struct:__anon10::__anon11
-datatype	libmemcached_protocol/binary.h	/^            uint8_t datatype;$/;"	m	struct:__anon8::__anon9
+datatype	libmemcached_protocol/binary.h	/^            uint8_t datatype;$/;"	m	struct:__anon12::__anon13
+datatype	libmemcached_protocol/binary.h	/^            uint8_t datatype;$/;"	m	struct:__anon14::__anon15
 debug	memtier_benchmark.h	/^    int debug;$/;"	m	struct:benchmark_config
 debugPrintMemtierOnError	tests/include.py	/^def debugPrintMemtierOnError(config, env, memtier_ok):$/;"	f
 debug_dump	run_stats.cpp	/^void run_stats::debug_dump(void)$/;"	f	class:run_stats
-delta	libmemcached_protocol/binary.h	/^                uint64_t delta;$/;"	m	struct:__anon24::__anon25::__anon26
+delta	libmemcached_protocol/binary.h	/^                uint64_t delta;$/;"	m	struct:__anon28::__anon29::__anon30
 depcomp	Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
 disconnect	client.cpp	/^void client::disconnect(void)$/;"	f	class:client
 disconnect	cluster_client.cpp	/^void cluster_client::disconnect(void)$/;"	f	class:cluster_client
@@ -771,24 +742,24 @@ double_el	run_stats.h	/^    double_el$/;"	e	enum:tabel_el_type
 double_to_int64_bits	deps/hdr_histogram/hdr_histogram_log.c	/^static uint64_t double_to_int64_bits(double d)$/;"	f	file:
 double_value	run_stats.h	/^    double  double_value;$/;"	m	struct:table_el
 dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
-eJSON_NESTED_TYPE	JSON_handler.h	/^}eJSON_NESTED_TYPE;$/;"	t	typeref:enum:__anon3
+eJSON_NESTED_TYPE	JSON_handler.h	/^}eJSON_NESTED_TYPE;$/;"	t	typeref:enum:__anon1
 elements	run_stats.h	/^    std::vector<table_el> elements;$/;"	m	struct:table_column
-encoding_flyweight_v0_t	deps/hdr_histogram/hdr_histogram_log.c	/^} encoding_flyweight_v0_t;$/;"	t	typeref:struct:__anon63	file:
-encoding_flyweight_v1_t	deps/hdr_histogram/hdr_histogram_log.c	/^} encoding_flyweight_v1_t;$/;"	t	typeref:struct:__anon64	file:
+encoding_flyweight_v0_t	deps/hdr_histogram/hdr_histogram_log.c	/^} encoding_flyweight_v0_t;$/;"	t	typeref:struct:__anon4	file:
+encoding_flyweight_v1_t	deps/hdr_histogram/hdr_histogram_log.c	/^} encoding_flyweight_v1_t;$/;"	t	typeref:struct:__anon5	file:
 end	config_types.h	/^    inline std::vector<float>::iterator end()  { return quantile_list.end(); }$/;"	f	struct:config_quantiles
-enginespecific_length	libmemcached_protocol/binary.h	/^                    uint16_t enginespecific_length;$/;"	m	struct:__anon45::__anon46::__anon47::__anon48
-enginespecific_length	libmemcached_protocol/binary.h	/^                    uint16_t enginespecific_length;$/;"	m	struct:__anon50::__anon51::__anon52::__anon53
+enginespecific_length	libmemcached_protocol/binary.h	/^                    uint16_t enginespecific_length;$/;"	m	struct:__anon49::__anon50::__anon51::__anon52
+enginespecific_length	libmemcached_protocol/binary.h	/^                    uint16_t enginespecific_length;$/;"	m	struct:__anon54::__anon55::__anon56::__anon57
 ensure_clean_benchmark_folder	tests/include.py	/^def ensure_clean_benchmark_folder(dirname):$/;"	f
 exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
-expiration	libmemcached_protocol/binary.h	/^                    uint32_t expiration;$/;"	m	struct:__anon45::__anon46::__anon47::__anon49
-expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon18::__anon19::__anon20
-expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon21::__anon22::__anon23
-expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon24::__anon25::__anon26
-expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon33::__anon34::__anon35
-expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon36::__anon37::__anon38
+expiration	libmemcached_protocol/binary.h	/^                    uint32_t expiration;$/;"	m	struct:__anon49::__anon50::__anon51::__anon53
+expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon22::__anon23::__anon24
+expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon25::__anon26::__anon27
+expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon28::__anon29::__anon30
+expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon37::__anon38::__anon39
+expiration	libmemcached_protocol/binary.h	/^                uint32_t expiration;$/;"	m	struct:__anon40::__anon41::__anon42
 expiry_range	memtier_benchmark.h	/^    struct config_range expiry_range;$/;"	m	struct:benchmark_config	typeref:struct:benchmark_config::config_range
-extlen	libmemcached_protocol/binary.h	/^            uint8_t extlen;$/;"	m	struct:__anon10::__anon11
-extlen	libmemcached_protocol/binary.h	/^            uint8_t extlen;$/;"	m	struct:__anon8::__anon9
+extlen	libmemcached_protocol/binary.h	/^            uint8_t extlen;$/;"	m	struct:__anon12::__anon13
+extlen	libmemcached_protocol/binary.h	/^            uint8_t extlen;$/;"	m	struct:__anon14::__anon15
 file_reader	file_io.cpp	/^file_reader::file_reader(const char *filename) :$/;"	f	class:file_reader
 file_reader	file_io.cpp	/^file_reader::file_reader(const file_reader& from) :$/;"	f	class:file_reader
 file_reader	file_io.h	/^class file_reader {$/;"	c
@@ -797,20 +768,20 @@ file_writer	file_io.h	/^class file_writer {$/;"	c
 fill_pipeline	shard_connection.cpp	/^void shard_connection::fill_pipeline(void)$/;"	f	class:shard_connection
 finished	client.cpp	/^bool client::finished(void)$/;"	f	class:client
 finished	client.cpp	/^bool verify_client::finished(void)$/;"	f	class:verify_client
-flags	libmemcached_protocol/binary.h	/^                    uint16_t flags;$/;"	m	struct:__anon45::__anon46::__anon47::__anon48
-flags	libmemcached_protocol/binary.h	/^                    uint16_t flags;$/;"	m	struct:__anon50::__anon51::__anon52::__anon53
-flags	libmemcached_protocol/binary.h	/^                    uint32_t flags;$/;"	m	struct:__anon45::__anon46::__anon47::__anon49
-flags	libmemcached_protocol/binary.h	/^                uint32_t flags;$/;"	m	struct:__anon15::__anon16::__anon17
-flags	libmemcached_protocol/binary.h	/^                uint32_t flags;$/;"	m	struct:__anon21::__anon22::__anon23
-flags	libmemcached_protocol/binary.h	/^                uint32_t flags;$/;"	m	struct:__anon42::__anon43::__anon44
-flags	libmemcached_protocol/binary.h	/^                uint8_t  flags;$/;"	m	struct:__anon39::__anon40::__anon41
+flags	libmemcached_protocol/binary.h	/^                    uint16_t flags;$/;"	m	struct:__anon49::__anon50::__anon51::__anon52
+flags	libmemcached_protocol/binary.h	/^                    uint16_t flags;$/;"	m	struct:__anon54::__anon55::__anon56::__anon57
+flags	libmemcached_protocol/binary.h	/^                    uint32_t flags;$/;"	m	struct:__anon49::__anon50::__anon51::__anon53
+flags	libmemcached_protocol/binary.h	/^                uint32_t flags;$/;"	m	struct:__anon19::__anon20::__anon21
+flags	libmemcached_protocol/binary.h	/^                uint32_t flags;$/;"	m	struct:__anon25::__anon26::__anon27
+flags	libmemcached_protocol/binary.h	/^                uint32_t flags;$/;"	m	struct:__anon46::__anon47::__anon48
+flags	libmemcached_protocol/binary.h	/^                uint8_t  flags;$/;"	m	struct:__anon43::__anon44::__anon45
 format	run_stats.h	/^    std::string format;$/;"	m	struct:table_el
 format_arbitrary_command	protocol.cpp	/^bool memcache_binary_protocol::format_arbitrary_command(arbitrary_command& cmd) {$/;"	f	class:memcache_binary_protocol
 format_arbitrary_command	protocol.cpp	/^bool memcache_text_protocol::format_arbitrary_command(arbitrary_command& cmd) {$/;"	f	class:memcache_text_protocol
 format_arbitrary_command	protocol.cpp	/^bool redis_protocol::format_arbitrary_command(arbitrary_command &cmd) {$/;"	f	class:redis_protocol
 format_head_string	deps/hdr_histogram/hdr_histogram.c	/^static const char* format_head_string(format_type format)$/;"	f	file:
 format_line_string	deps/hdr_histogram/hdr_histogram.c	/^static void format_line_string(char* str, size_t len, int significant_figures, format_type format)$/;"	f	file:
-format_type	deps/hdr_histogram/hdr_histogram.h	/^} format_type;$/;"	t	typeref:enum:__anon62
+format_type	deps/hdr_histogram/hdr_histogram.h	/^} format_type;$/;"	t	typeref:enum:__anon3
 from_base_64	deps/hdr_histogram/hdr_encoding.c	/^static int from_base_64(int c)$/;"	f	file:
 func_add_hook	libtool	/^func_add_hook ()$/;"	f
 func_add_hook	ltmain.sh	/^func_add_hook ()$/;"	f
@@ -822,8 +793,6 @@ func_append_uniq	libtool	/^func_append_uniq ()$/;"	f
 func_append_uniq	ltmain.sh	/^func_append_uniq ()$/;"	f
 func_arith	libtool	/^  func_arith ()$/;"	f
 func_arith	ltmain.sh	/^  func_arith ()$/;"	f
-func_cc_basename	config.status	/^func_cc_basename ()$/;"	f
-func_cc_basename	configure	/^func_cc_basename ()$/;"	f
 func_cc_basename	libtool	/^func_cc_basename ()$/;"	f
 func_check_prog_grep	libtool	/^  func_check_prog_grep ()$/;"	f
 func_check_prog_grep	ltmain.sh	/^  func_check_prog_grep ()$/;"	f
@@ -888,7 +857,6 @@ func_dll_def_p	libtool	/^func_dll_def_p ()$/;"	f
 func_dll_def_p	ltmain.sh	/^func_dll_def_p ()$/;"	f
 func_echo	libtool	/^func_echo ()$/;"	f
 func_echo	ltmain.sh	/^func_echo ()$/;"	f
-func_echo_all	configure	/^func_echo_all ()$/;"	f
 func_echo_all	libtool	/^func_echo_all ()$/;"	f
 func_echo_all	ltmain.sh	/^func_echo_all ()$/;"	f
 func_echo_infix_1	libtool	/^func_echo_infix_1 ()$/;"	f
@@ -913,9 +881,6 @@ func_extract_an_archive	libtool	/^func_extract_an_archive ()$/;"	f
 func_extract_an_archive	ltmain.sh	/^func_extract_an_archive ()$/;"	f
 func_extract_archives	libtool	/^func_extract_archives ()$/;"	f
 func_extract_archives	ltmain.sh	/^func_extract_archives ()$/;"	f
-func_fallback_echo	config.status	/^func_fallback_echo ()$/;"	f
-func_fallback_echo	configure	/^  func_fallback_echo ()$/;"	f
-func_fallback_echo	configure	/^func_fallback_echo ()$/;"	f
 func_fallback_echo	libtool	/^func_fallback_echo ()$/;"	f
 func_fallback_echo	ltmain.sh	/^func_fallback_echo ()$/;"	f
 func_fatal_configuration	libtool	/^func_fatal_configuration ()$/;"	f
@@ -981,8 +946,6 @@ func_mode_link	libtool	/^func_mode_link ()$/;"	f
 func_mode_link	ltmain.sh	/^func_mode_link ()$/;"	f
 func_mode_uninstall	libtool	/^func_mode_uninstall ()$/;"	f
 func_mode_uninstall	ltmain.sh	/^func_mode_uninstall ()$/;"	f
-func_munge_path_list	config.status	/^func_munge_path_list ()$/;"	f
-func_munge_path_list	configure	/^func_munge_path_list ()$/;"	f
 func_munge_path_list	libtool	/^func_munge_path_list ()$/;"	f
 func_normal_abspath	libtool	/^func_normal_abspath ()$/;"	f
 func_normal_abspath	ltmain.sh	/^func_normal_abspath ()$/;"	f
@@ -1028,7 +991,6 @@ func_split_short_opt	libtool	/^  func_split_short_opt ()$/;"	f
 func_split_short_opt	ltmain.sh	/^  func_split_short_opt ()$/;"	f
 func_stripname	libtool	/^  func_stripname ()$/;"	f
 func_stripname	ltmain.sh	/^  func_stripname ()$/;"	f
-func_stripname_cnf	configure	/^func_stripname_cnf ()$/;"	f
 func_suncc_cstd_abi	libtool	/^func_suncc_cstd_abi ()$/;"	f
 func_suncc_cstd_abi	ltmain.sh	/^func_suncc_cstd_abi ()$/;"	f
 func_to_host_file	libtool	/^func_to_host_file ()$/;"	f
@@ -1075,7 +1037,7 @@ get_bucket_index	deps/hdr_histogram/hdr_histogram.c	/^static int32_t get_bucket_
 get_clsid	item.cpp	/^unsigned int memcache_item::get_clsid(void)$/;"	f	class:memcache_item
 get_cluster_slots_state	shard_connection.h	/^    enum cluster_slots_state get_cluster_slots_state() {$/;"	f	class:shard_connection
 get_config	client.h	/^    benchmark_config *get_config(void) { return m_config; }$/;"	f	class:client_group
-get_connect_info	config_types.cpp	/^int server_addr::get_connect_info(struct connect_info *ci)$/;"	f	class:server_addr
+get_connect_info	config_types.cpp	/^int server_addr::get_connect_info(struct connect_info *ci, bool change, const char* port)$/;"	f	class:server_addr
 get_connection_state	shard_connection.h	/^    enum connection_state get_connection_state() {$/;"	f	class:shard_connection
 get_cookie_base	deps/hdr_histogram/hdr_histogram_log.c	/^static uint32_t get_cookie_base(uint32_t cookie)$/;"	f	file:
 get_data	item.cpp	/^char* memcache_item::get_data(void)$/;"	f	class:memcache_item
@@ -1264,39 +1226,34 @@ hdr_total_count	deps/hdr_histogram/hdr_histogram.c	/^int64_t hdr_total_count(con
 hdr_value_at_index	deps/hdr_histogram/hdr_histogram.c	/^int64_t hdr_value_at_index(const struct hdr_histogram *h, int32_t index)$/;"	f
 hdr_value_at_percentile	deps/hdr_histogram/hdr_histogram.c	/^int64_t hdr_value_at_percentile(const struct hdr_histogram* h, double percentile)$/;"	f
 hdr_values_are_equivalent	deps/hdr_histogram/hdr_histogram.c	/^bool hdr_values_are_equivalent(const struct hdr_histogram* h, int64_t a, int64_t b)$/;"	f
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon18::__anon19
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon21::__anon22
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon24::__anon25
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon30::__anon31
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon33::__anon34
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon36::__anon37
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon42::__anon43
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon45::__anon46
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon50::__anon51
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon22::__anon23
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon25::__anon26
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon28::__anon29
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon34::__anon35
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon37::__anon38
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon40::__anon41
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon46::__anon47
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon49::__anon50
 header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon54::__anon55
-header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:protocol_binary_request_no_extras::__anon12
-header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon13::__anon14
-header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon15::__anon16
-header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon27::__anon28
-header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon39::__anon40
-header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon57::__anon58
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:__anon58::__anon59
+header	libmemcached_protocol/binary.h	/^            protocol_binary_request_header header;$/;"	m	struct:protocol_binary_request_no_extras::__anon16
+header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon17::__anon18
+header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon19::__anon20
+header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon31::__anon32
+header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon43::__anon44
+header	libmemcached_protocol/binary.h	/^            protocol_binary_response_header header;$/;"	m	struct:__anon61::__anon62
 hex_digit_to_int	config_types.cpp	/^static int hex_digit_to_int(char c) {$/;"	f	file:
 hide_histogram	memtier_benchmark.h	/^    int hide_histogram;$/;"	m	struct:benchmark_config
 highest_equivalent_value	deps/hdr_histogram/hdr_histogram.c	/^static int64_t highest_equivalent_value(const struct hdr_histogram* h, int64_t value)$/;"	f	file:
 highest_equivalent_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t highest_equivalent_value;$/;"	m	struct:hdr_iter
 highest_trackable_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t highest_trackable_value;$/;"	m	struct:hdr_histogram
 highest_trackable_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t highest_trackable_value;$/;"	m	struct:hdr_histogram_bucket_config
-highest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t highest_trackable_value;$/;"	m	struct:__anon63	file:
-highest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t highest_trackable_value;$/;"	m	struct:__anon64	file:
+highest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t highest_trackable_value;$/;"	m	struct:__anon4	file:
+highest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t highest_trackable_value;$/;"	m	struct:__anon5	file:
 histogram_print	run_stats.cpp	/^void histogram_print(FILE * out, json_handler * jsonhandler, const char * type, float msec, float percent)$/;"	f
 hold_pipeline	client.cpp	/^bool client::hold_pipeline(unsigned int conn_id) {$/;"	f	class:client
 hold_pipeline	cluster_client.cpp	/^bool cluster_client::hold_pipeline(unsigned int conn_id) {$/;"	f	class:cluster_client
-host	Makefile	/^host = x86_64-pc-linux-gnu$/;"	m
 host_alias	Makefile	/^host_alias = $/;"	m
-host_cpu	Makefile	/^host_cpu = x86_64$/;"	m
-host_os	Makefile	/^host_os = linux-gnu$/;"	m
-host_triplet	Makefile	/^host_triplet = x86_64-pc-linux-gnu$/;"	m
-host_vendor	Makefile	/^host_vendor = pc$/;"	m
 htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
 htobe16	deps/hdr_histogram/byteorder.h	39;"	d
 htobe16	deps/hdr_histogram/hdr_endian.h	23;"	d
@@ -1334,9 +1291,9 @@ init_double	run_stats.h	/^    table_el* init_double(std::string fmt, double val)
 init_openssl	memtier_benchmark.cpp	/^static void init_openssl(void)$/;"	f	file:
 init_openssl_threads	memtier_benchmark.cpp	/^static void init_openssl_threads(void)$/;"	f	file:
 init_str	run_stats.h	/^    table_el* init_str(std::string fmt, std::string val) {$/;"	f	struct:table_el
-initial	libmemcached_protocol/binary.h	/^                uint64_t initial;$/;"	m	struct:__anon24::__anon25::__anon26
+initial	libmemcached_protocol/binary.h	/^                uint64_t initial;$/;"	m	struct:__anon28::__anon29::__anon30
 initialized	client.cpp	/^bool client::initialized(void)$/;"	f	class:client
-install_sh	Makefile	/^install_sh = ${SHELL} \/home\/ljkim\/memtier_benchmark\/install-sh$/;"	m
+install_sh	Makefile	/^install_sh = ${SHELL} \/home\/ljkim\/memtier_failover_modified\/install-sh$/;"	m
 install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
 install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
 install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
@@ -1352,7 +1309,7 @@ is_eof	file_io.cpp	/^bool file_reader::is_eof(void)$/;"	f	class:file_reader
 is_error	protocol.cpp	/^bool protocol_response::is_error(void)$/;"	f	class:protocol_response
 is_expired	item.cpp	/^bool memcache_item::is_expired(void)$/;"	f	class:memcache_item
 is_valid_vbucket_state_t	libmemcached_protocol/vbucket.h	51;"	d
-item	libmemcached_protocol/binary.h	/^                } item;$/;"	m	struct:__anon45::__anon46::__anon47	typeref:struct:__anon45::__anon46::__anon47::__anon49
+item	libmemcached_protocol/binary.h	/^                } item;$/;"	m	struct:__anon49::__anon50::__anon51	typeref:struct:__anon49::__anon50::__anon51::__anon53
 item_list	config_types.h	/^    std::vector<weight_item> item_list;$/;"	m	struct:config_weight_list
 iter_linear_next	deps/hdr_histogram/hdr_histogram.c	/^static bool iter_linear_next(struct hdr_iter* iter)$/;"	f	file:
 join	memtier_benchmark.cpp	/^    void join(void)$/;"	f	struct:cg_thread
@@ -1378,8 +1335,8 @@ key_prefix	memtier_benchmark.h	/^    const char *key_prefix;$/;"	m	struct:benchm
 key_ptr	protocol.h	/^        char *key_ptr;$/;"	m	struct:keylist::key_entry
 key_stddev	memtier_benchmark.h	/^    double key_stddev;$/;"	m	struct:benchmark_config
 key_type	config_types.h	/^    key_type        = 1,$/;"	e	enum:command_arg_type
-keylen	libmemcached_protocol/binary.h	/^            uint16_t keylen;$/;"	m	struct:__anon10::__anon11
-keylen	libmemcached_protocol/binary.h	/^            uint16_t keylen;$/;"	m	struct:__anon8::__anon9
+keylen	libmemcached_protocol/binary.h	/^            uint16_t keylen;$/;"	m	struct:__anon12::__anon13
+keylen	libmemcached_protocol/binary.h	/^            uint16_t keylen;$/;"	m	struct:__anon14::__anon15
 keylist	protocol.cpp	/^keylist::keylist(unsigned int max_keys) :$/;"	f	class:keylist
 keylist	protocol.h	/^class keylist {$/;"	c
 l	deps/hdr_histogram/hdr_histogram_log.c	/^    uint64_t l;$/;"	m	union:uint64_dbl_cvt	file:
@@ -1398,11 +1355,11 @@ le64toh	deps/hdr_histogram/hdr_endian.h	36;"	d
 le64toh	deps/hdr_histogram/hdr_endian.h	58;"	d
 le64toh	deps/hdr_histogram/hdr_endian.h	79;"	d
 le64toh	deps/hdr_histogram/hdr_endian.h	97;"	d
-length	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t length;$/;"	m	struct:__anon65	file:
+length	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t length;$/;"	m	struct:__anon6	file:
 letoh16	deps/hdr_histogram/byteorder.h	34;"	d
 letoh32	deps/hdr_histogram/byteorder.h	36;"	d
 letoh64	deps/hdr_histogram/byteorder.h	38;"	d
-level	libmemcached_protocol/binary.h	/^                uint32_t level;$/;"	m	struct:__anon30::__anon31::__anon32
+level	libmemcached_protocol/binary.h	/^                uint32_t level;$/;"	m	struct:__anon34::__anon35::__anon36
 libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
 libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
 libtool_options_prep	libtool	/^libtool_options_prep ()$/;"	f
@@ -1411,10 +1368,10 @@ libtool_parse_options	libtool	/^libtool_parse_options ()$/;"	f
 libtool_parse_options	ltmain.sh	/^libtool_parse_options ()$/;"	f
 libtool_validate_options	libtool	/^libtool_validate_options ()$/;"	f
 libtool_validate_options	ltmain.sh	/^libtool_validate_options ()$/;"	f
-linear	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_linear linear;$/;"	m	union:hdr_iter::__anon61	typeref:struct:hdr_iter::__anon61::hdr_iter_linear
+linear	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_linear linear;$/;"	m	union:hdr_iter::__anon2	typeref:struct:hdr_iter::__anon2::hdr_iter_linear
 localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
 localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
-log	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_log log;$/;"	m	union:hdr_iter::__anon61	typeref:struct:hdr_iter::__anon61::hdr_iter_log
+log	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_log log;$/;"	m	union:hdr_iter::__anon2	typeref:struct:hdr_iter::__anon2::hdr_iter_log
 log_base	deps/hdr_histogram/hdr_histogram.h	/^    double log_base;$/;"	m	struct:hdr_iter_log
 log_iter_next	deps/hdr_histogram/hdr_histogram.c	/^static bool log_iter_next(struct hdr_iter *iter)$/;"	f	file:
 log_level	memtier_benchmark.cpp	/^static int log_level = 0;$/;"	v	file:
@@ -1422,8 +1379,8 @@ lowest_equivalent_value	deps/hdr_histogram/hdr_histogram.c	/^static int64_t lowe
 lowest_equivalent_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t lowest_equivalent_value;$/;"	m	struct:hdr_iter
 lowest_trackable_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t lowest_trackable_value;$/;"	m	struct:hdr_histogram
 lowest_trackable_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t lowest_trackable_value;$/;"	m	struct:hdr_histogram_bucket_config
-lowest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t lowest_trackable_value;$/;"	m	struct:__anon63	file:
-lowest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t lowest_trackable_value;$/;"	m	struct:__anon64	file:
+lowest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t lowest_trackable_value;$/;"	m	struct:__anon4	file:
+lowest_trackable_value	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t lowest_trackable_value;$/;"	m	struct:__anon5	file:
 m_address	shard_connection.h	/^    char* m_address;$/;"	m	class:shard_connection
 m_ar_commands	run_stats_types.h	/^    ar_one_sec_cmd_stats m_ar_commands;$/;"	m	class:one_second_stats
 m_ar_commands	run_stats_types.h	/^    ar_totals_cmd m_ar_commands;$/;"	m	class:totals
@@ -1456,14 +1413,14 @@ m_config	run_stats.h	/^    benchmark_config *m_config;$/;"	m	class:run_stats
 m_config	shard_connection.h	/^    benchmark_config* m_config;$/;"	m	class:shard_connection
 m_connection_state	shard_connection.h	/^    enum connection_state m_connection_state;$/;"	m	class:shard_connection	typeref:enum:shard_connection::connection_state
 m_connections	client.h	/^    std::vector<shard_connection*> m_connections;$/;"	m	class:client
-m_conns_manager	shard_connection.h	/^    connections_manager* m_conns_manager;$/;"	m	class:shard_connection
+m_conns_manager	shard_connection.h	/^	connections_manager* m_conns_manager;$/;"	m	class:shard_connection
 m_cur_item	obj_gen.h	/^    memcache_item* m_cur_item;$/;"	m	class:import_object_generator
 m_cur_stats	run_stats.h	/^    one_second_stats m_cur_stats;$/;"	m	class:run_stats
 m_current_mbulk	protocol.cpp	/^    mbulk_size_el* m_current_mbulk;$/;"	m	class:redis_protocol	file:
 m_data	item.h	/^    char *m_data;                   \/** item's data *\/$/;"	m	class:memcache_item
 m_data_blob	obj_gen.h	/^    struct random_data m_data_blob;$/;"	m	class:random_generator	typeref:struct:random_generator::random_data
 m_data_blob	obj_gen.h	/^    unsigned short m_data_blob[3];$/;"	m	class:random_generator
-m_data_size	obj_gen.h	/^    } m_data_size;$/;"	m	class:object_generator	typeref:union:object_generator::__anon1
+m_data_size	obj_gen.h	/^    } m_data_size;$/;"	m	class:object_generator	typeref:union:object_generator::__anon64
 m_data_size_pattern	obj_gen.h	/^    const char *m_data_size_pattern;$/;"	m	class:object_generator
 m_data_size_type	obj_gen.h	/^    data_size_type m_data_size_type;$/;"	m	class:object_generator
 m_db_selection	shard_connection.h	/^    enum select_db_state m_db_selection;$/;"	m	class:shard_connection	typeref:enum:shard_connection::select_db_state
@@ -1534,7 +1491,7 @@ m_misses_sec	run_stats_types.h	/^    double m_misses_sec;$/;"	m	class:totals
 m_moved	run_stats_types.h	/^    unsigned int m_moved;$/;"	m	class:one_sec_cmd_stats
 m_moved_sec	run_stats_types.h	/^    double m_moved_sec;$/;"	m	class:totals
 m_moved_sec	run_stats_types.h	/^    double m_moved_sec;$/;"	m	class:totals_cmd
-m_mutex	config_types.h	/^    pthread_mutex_t m_mutex;$/;"	m	struct:server_addr
+m_mutex	config_types.h	/^	pthread_mutex_t m_mutex;$/;"	m	struct:server_addr
 m_nbytes	item.h	/^    unsigned int m_nbytes;          \/** from file: nbytes (size of data, including trailing CRLF) *\/$/;"	m	class:memcache_item
 m_nest_closer_types	JSON_handler.h	/^    std::list<eJSON_NESTED_TYPE>    m_nest_closer_types;$/;"	m	class:json_handler
 m_next_key	obj_gen.h	/^    std::vector<unsigned long long> m_next_key;$/;"	m	class:object_generator
@@ -1616,8 +1573,8 @@ m_wait_cmd	run_stats_types.h	/^    one_sec_cmd_stats m_wait_cmd;$/;"	m	class:one
 m_wait_cmd	run_stats_types.h	/^    totals_cmd m_wait_cmd;$/;"	m	class:totals
 m_wait_latency_histogram	run_stats.h	/^    safe_hdr_histogram m_wait_latency_histogram;$/;"	m	class:run_stats
 m_write_buf	protocol.h	/^    struct evbuffer* m_write_buf;$/;"	m	class:abstract_protocol	typeref:struct:abstract_protocol::evbuffer
-magic	libmemcached_protocol/binary.h	/^            uint8_t magic;$/;"	m	struct:__anon10::__anon11
-magic	libmemcached_protocol/binary.h	/^            uint8_t magic;$/;"	m	struct:__anon8::__anon9
+magic	libmemcached_protocol/binary.h	/^            uint8_t magic;$/;"	m	struct:__anon12::__anon13
+magic	libmemcached_protocol/binary.h	/^            uint8_t magic;$/;"	m	struct:__anon14::__anon15
 main	config.guess	/^		main()$/;"	f
 main	config.guess	/^	main ()$/;"	f
 main	memtier_benchmark.cpp	/^int main(int argc, char *argv[])$/;"	f
@@ -1627,7 +1584,7 @@ man1dir	Makefile	/^man1dir = $(mandir)\/man1$/;"	m
 mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
 max	config_types.h	/^    int max;$/;"	m	struct:config_range
 max	deps/hdr_histogram/hdr_histogram_log.h	/^    hdr_timespec max;$/;"	m	struct:hdr_log_entry
-max_results	libmemcached_protocol/binary.h	/^                uint32_t max_results;$/;"	m	struct:__anon39::__anon40::__anon41
+max_results	libmemcached_protocol/binary.h	/^                uint32_t max_results;$/;"	m	struct:__anon43::__anon44::__anon45
 max_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t max_value;$/;"	m	struct:hdr_histogram
 mbulk_element	protocol.h	/^    mbulk_element(mbulk_element_type t) : type(t) {;}$/;"	f	class:mbulk_element
 mbulk_element	protocol.h	/^class mbulk_element {$/;"	c
@@ -1655,22 +1612,22 @@ merge	run_stats_types.cpp	/^void ar_one_sec_cmd_stats::merge(const ar_one_sec_cm
 merge	run_stats_types.cpp	/^void one_sec_cmd_stats::merge(const one_sec_cmd_stats& other) {$/;"	f	class:one_sec_cmd_stats
 merge	run_stats_types.cpp	/^void one_second_stats::merge(const one_second_stats& other) {$/;"	f	class:one_second_stats
 merge_run_stats	client.cpp	/^void client_group::merge_run_stats(run_stats* target)$/;"	f	class:client_group
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon13	typeref:struct:__anon13::__anon14
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon15	typeref:struct:__anon15::__anon16
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon18	typeref:struct:__anon18::__anon19
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon21	typeref:struct:__anon21::__anon22
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon24	typeref:struct:__anon24::__anon25
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon27	typeref:struct:__anon27::__anon28
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon30	typeref:struct:__anon30::__anon31
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon33	typeref:struct:__anon33::__anon34
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon36	typeref:struct:__anon36::__anon37
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon39	typeref:struct:__anon39::__anon40
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon42	typeref:struct:__anon42::__anon43
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon45	typeref:struct:__anon45::__anon46
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon50	typeref:struct:__anon50::__anon51
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon17	typeref:struct:__anon17::__anon18
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon19	typeref:struct:__anon19::__anon20
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon22	typeref:struct:__anon22::__anon23
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon25	typeref:struct:__anon25::__anon26
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon28	typeref:struct:__anon28::__anon29
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon31	typeref:struct:__anon31::__anon32
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon34	typeref:struct:__anon34::__anon35
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon37	typeref:struct:__anon37::__anon38
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon40	typeref:struct:__anon40::__anon41
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon43	typeref:struct:__anon43::__anon44
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon46	typeref:struct:__anon46::__anon47
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon49	typeref:struct:__anon49::__anon50
 message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon54	typeref:struct:__anon54::__anon55
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon57	typeref:struct:__anon57::__anon58
-message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:protocol_binary_request_no_extras	typeref:struct:protocol_binary_request_no_extras::__anon12
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon58	typeref:struct:__anon58::__anon59
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:__anon61	typeref:struct:__anon61::__anon62
+message	libmemcached_protocol/binary.h	/^        } message;$/;"	m	union:protocol_binary_request_no_extras	typeref:struct:protocol_binary_request_no_extras::__anon16
 min	config_types.h	/^    int min;$/;"	m	struct:config_range
 min_value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t min_value;$/;"	m	struct:hdr_histogram
 minor_version	deps/hdr_histogram/hdr_histogram_log.h	/^    int minor_version;$/;"	m	struct:hdr_log_reader
@@ -1692,7 +1649,7 @@ nonce	deps/hdr_histogram/hdr_histogram_log.h	/^    uint32_t nonce;$/;"	m	struct:
 normal_distribution	obj_gen.cpp	/^unsigned long long object_generator::normal_distribution(unsigned long long r_min, unsigned long long r_max, double r_stddev, double r_median)$/;"	f	class:object_generator
 normalize_index	deps/hdr_histogram/hdr_histogram.c	/^static int32_t normalize_index(const struct hdr_histogram* h, int32_t index)$/;"	f	file:
 normalizing_index_offset	deps/hdr_histogram/hdr_histogram.h	/^    int32_t normalizing_index_offset;$/;"	m	struct:hdr_histogram
-normalizing_index_offset	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t normalizing_index_offset;$/;"	m	struct:__anon64	file:
+normalizing_index_offset	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t normalizing_index_offset;$/;"	m	struct:__anon5	file:
 num_slaves	memtier_benchmark.h	/^    config_range num_slaves;$/;"	m	struct:benchmark_config
 obj_iter_type	client.h	/^    inline int obj_iter_type(benchmark_config *cfg, unsigned char index)$/;"	f	class:client
 object_generator	obj_gen.cpp	/^object_generator::object_generator(const object_generator& copy) :$/;"	f	class:object_generator
@@ -1704,10 +1661,10 @@ one_sec_cmd_stats	run_stats_types.h	/^class one_sec_cmd_stats {$/;"	c
 one_second_stats	run_stats_types.cpp	/^one_second_stats::one_second_stats(unsigned int second) :$/;"	f	class:one_second_stats
 one_second_stats	run_stats_types.h	/^class one_second_stats {$/;"	c
 one_second_stats_predicate	run_stats.cpp	/^bool one_second_stats_predicate(const one_second_stats& a, const one_second_stats& b)$/;"	f
-opaque	libmemcached_protocol/binary.h	/^            uint32_t opaque;$/;"	m	struct:__anon10::__anon11
-opaque	libmemcached_protocol/binary.h	/^            uint32_t opaque;$/;"	m	struct:__anon8::__anon9
-opcode	libmemcached_protocol/binary.h	/^            uint8_t opcode;$/;"	m	struct:__anon10::__anon11
-opcode	libmemcached_protocol/binary.h	/^            uint8_t opcode;$/;"	m	struct:__anon8::__anon9
+opaque	libmemcached_protocol/binary.h	/^            uint32_t opaque;$/;"	m	struct:__anon12::__anon13
+opaque	libmemcached_protocol/binary.h	/^            uint32_t opaque;$/;"	m	struct:__anon14::__anon15
+opcode	libmemcached_protocol/binary.h	/^            uint8_t opcode;$/;"	m	struct:__anon12::__anon13
+opcode	libmemcached_protocol/binary.h	/^            uint8_t opcode;$/;"	m	struct:__anon14::__anon15
 open_file	file_io.cpp	/^bool file_reader::open_file(void)$/;"	f	class:file_reader
 open_file	file_io.cpp	/^bool file_writer::open_file(void)$/;"	f	class:file_writer
 open_file	obj_gen.cpp	/^bool import_object_generator::open_file(void)$/;"	f	class:import_object_generator
@@ -1730,13 +1687,13 @@ parse_log_state	deps/hdr_histogram/hdr_histogram_log.c	/^enum parse_log_state {$
 parse_response	protocol.cpp	/^int memcache_binary_protocol::parse_response(void)$/;"	f	class:memcache_binary_protocol
 parse_response	protocol.cpp	/^int memcache_text_protocol::parse_response(void)$/;"	f	class:memcache_text_protocol
 parse_response	protocol.cpp	/^int redis_protocol::parse_response(void)$/;"	f	class:redis_protocol
-payload_len	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t payload_len;$/;"	m	struct:__anon64	file:
+payload_len	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t payload_len;$/;"	m	struct:__anon5	file:
 pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
 peek_next_value_from_index	deps/hdr_histogram/hdr_histogram.c	/^static int64_t peek_next_value_from_index(struct hdr_iter* iter)$/;"	f	file:
 percentile	deps/hdr_histogram/hdr_histogram.h	/^    double percentile;$/;"	m	struct:hdr_iter_percentiles
 percentile_iter_next	deps/hdr_histogram/hdr_histogram.c	/^static bool percentile_iter_next(struct hdr_iter* iter)$/;"	f	file:
 percentile_to_iterate_to	deps/hdr_histogram/hdr_histogram.h	/^    double percentile_to_iterate_to;$/;"	m	struct:hdr_iter_percentiles
-percentiles	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_percentiles percentiles;$/;"	m	union:hdr_iter::__anon61	typeref:struct:hdr_iter::__anon61::hdr_iter_percentiles
+percentiles	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_percentiles percentiles;$/;"	m	union:hdr_iter::__anon2	typeref:struct:hdr_iter::__anon2::hdr_iter_percentiles
 pipeline	memtier_benchmark.h	/^    unsigned int pipeline;$/;"	m	struct:benchmark_config
 pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/memtier_benchmark$/;"	m
 pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/memtier_benchmark$/;"	m
@@ -1775,30 +1732,30 @@ process_response	shard_connection.cpp	/^void shard_connection::process_response(
 program_details	missing	/^program_details ()$/;"	f
 program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
 protocol	memtier_benchmark.h	/^    const char *protocol;$/;"	m	struct:benchmark_config
-protocol_binary_command	libmemcached_protocol/binary.h	/^    } protocol_binary_command;$/;"	t	typeref:enum:__anon6
-protocol_binary_datatypes	libmemcached_protocol/binary.h	/^    } protocol_binary_datatypes;$/;"	t	typeref:enum:__anon7
-protocol_binary_magic	libmemcached_protocol/binary.h	/^    } protocol_binary_magic;$/;"	t	typeref:enum:__anon4
+protocol_binary_command	libmemcached_protocol/binary.h	/^    } protocol_binary_command;$/;"	t	typeref:enum:__anon10
+protocol_binary_datatypes	libmemcached_protocol/binary.h	/^    } protocol_binary_datatypes;$/;"	t	typeref:enum:__anon11
+protocol_binary_magic	libmemcached_protocol/binary.h	/^    } protocol_binary_magic;$/;"	t	typeref:enum:__anon8
 protocol_binary_request_add	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_set protocol_binary_request_add;$/;"	t
 protocol_binary_request_append	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_append;$/;"	t
 protocol_binary_request_decr	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_incr protocol_binary_request_decr;$/;"	t
 protocol_binary_request_del_vbucket	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_del_vbucket;$/;"	t
 protocol_binary_request_delete	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_delete;$/;"	t
-protocol_binary_request_flush	libmemcached_protocol/binary.h	/^    } protocol_binary_request_flush;$/;"	t	typeref:union:__anon18
-protocol_binary_request_gat	libmemcached_protocol/binary.h	/^    } protocol_binary_request_gat;$/;"	t	typeref:union:__anon36
+protocol_binary_request_flush	libmemcached_protocol/binary.h	/^    } protocol_binary_request_flush;$/;"	t	typeref:union:__anon22
+protocol_binary_request_gat	libmemcached_protocol/binary.h	/^    } protocol_binary_request_gat;$/;"	t	typeref:union:__anon40
 protocol_binary_request_gatq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_gat protocol_binary_request_gatq;$/;"	t
 protocol_binary_request_get	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_get;$/;"	t
 protocol_binary_request_get_vbucket	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_get_vbucket;$/;"	t
 protocol_binary_request_getk	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_getk;$/;"	t
 protocol_binary_request_getkq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_getkq;$/;"	t
 protocol_binary_request_getq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_getq;$/;"	t
-protocol_binary_request_header	libmemcached_protocol/binary.h	/^    } protocol_binary_request_header;$/;"	t	typeref:union:__anon8
-protocol_binary_request_incr	libmemcached_protocol/binary.h	/^    } protocol_binary_request_incr;$/;"	t	typeref:union:__anon24
+protocol_binary_request_header	libmemcached_protocol/binary.h	/^    } protocol_binary_request_header;$/;"	t	typeref:union:__anon12
+protocol_binary_request_incr	libmemcached_protocol/binary.h	/^    } protocol_binary_request_incr;$/;"	t	typeref:union:__anon28
 protocol_binary_request_no_extras	libmemcached_protocol/binary.h	/^    typedef union protocol_binary_request_no_extras protocol_binary_request_no_extras;$/;"	t	typeref:union:protocol_binary_request_no_extras
 protocol_binary_request_no_extras	libmemcached_protocol/binary.h	/^    union protocol_binary_request_no_extras {$/;"	u
 protocol_binary_request_noop	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_noop;$/;"	t
 protocol_binary_request_prepend	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_prepend;$/;"	t
 protocol_binary_request_quit	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_quit;$/;"	t
-protocol_binary_request_rangeop	libmemcached_protocol/binary.h	/^    } protocol_binary_request_rangeop;$/;"	t	typeref:union:__anon39
+protocol_binary_request_rangeop	libmemcached_protocol/binary.h	/^    } protocol_binary_request_rangeop;$/;"	t	typeref:union:__anon43
 protocol_binary_request_rappend	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_rangeop protocol_binary_request_rappend;$/;"	t
 protocol_binary_request_rappendq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_rangeop protocol_binary_request_rappendq;$/;"	t
 protocol_binary_request_rdecr	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_rangeop protocol_binary_request_rdecr;$/;"	t
@@ -1814,18 +1771,18 @@ protocol_binary_request_rprependq	libmemcached_protocol/binary.h	/^    typedef p
 protocol_binary_request_rset	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_rangeop protocol_binary_request_rset;$/;"	t
 protocol_binary_request_rsetq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_rangeop protocol_binary_request_rsetq;$/;"	t
 protocol_binary_request_scrub	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_scrub;$/;"	t
-protocol_binary_request_set	libmemcached_protocol/binary.h	/^    } protocol_binary_request_set;$/;"	t	typeref:union:__anon21
-protocol_binary_request_set_vbucket	libmemcached_protocol/binary.h	/^    } protocol_binary_request_set_vbucket;$/;"	t	typeref:union:__anon54
+protocol_binary_request_set	libmemcached_protocol/binary.h	/^    } protocol_binary_request_set;$/;"	t	typeref:union:__anon25
+protocol_binary_request_set_vbucket	libmemcached_protocol/binary.h	/^    } protocol_binary_request_set_vbucket;$/;"	t	typeref:union:__anon58
 protocol_binary_request_stats	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_stats;$/;"	t
-protocol_binary_request_tap_connect	libmemcached_protocol/binary.h	/^    } protocol_binary_request_tap_connect;$/;"	t	typeref:union:__anon42
+protocol_binary_request_tap_connect	libmemcached_protocol/binary.h	/^    } protocol_binary_request_tap_connect;$/;"	t	typeref:union:__anon46
 protocol_binary_request_tap_delete	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_tap_no_extras protocol_binary_request_tap_delete;$/;"	t
 protocol_binary_request_tap_flush	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_tap_no_extras protocol_binary_request_tap_flush;$/;"	t
-protocol_binary_request_tap_mutation	libmemcached_protocol/binary.h	/^    } protocol_binary_request_tap_mutation;$/;"	t	typeref:union:__anon45
-protocol_binary_request_tap_no_extras	libmemcached_protocol/binary.h	/^    } protocol_binary_request_tap_no_extras;$/;"	t	typeref:union:__anon50
+protocol_binary_request_tap_mutation	libmemcached_protocol/binary.h	/^    } protocol_binary_request_tap_mutation;$/;"	t	typeref:union:__anon49
+protocol_binary_request_tap_no_extras	libmemcached_protocol/binary.h	/^    } protocol_binary_request_tap_no_extras;$/;"	t	typeref:union:__anon54
 protocol_binary_request_tap_opaque	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_tap_no_extras protocol_binary_request_tap_opaque;$/;"	t
 protocol_binary_request_tap_vbucket_set	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_tap_no_extras protocol_binary_request_tap_vbucket_set;$/;"	t
-protocol_binary_request_touch	libmemcached_protocol/binary.h	/^    } protocol_binary_request_touch;$/;"	t	typeref:union:__anon33
-protocol_binary_request_verbosity	libmemcached_protocol/binary.h	/^    } protocol_binary_request_verbosity;$/;"	t	typeref:union:__anon30
+protocol_binary_request_touch	libmemcached_protocol/binary.h	/^    } protocol_binary_request_touch;$/;"	t	typeref:union:__anon37
+protocol_binary_request_verbosity	libmemcached_protocol/binary.h	/^    } protocol_binary_request_verbosity;$/;"	t	typeref:union:__anon34
 protocol_binary_request_version	libmemcached_protocol/binary.h	/^    typedef protocol_binary_request_no_extras protocol_binary_request_version;$/;"	t
 protocol_binary_response_add	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_add;$/;"	t
 protocol_binary_response_append	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_append;$/;"	t
@@ -1835,14 +1792,14 @@ protocol_binary_response_delete	libmemcached_protocol/binary.h	/^    typedef pro
 protocol_binary_response_flush	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_flush;$/;"	t
 protocol_binary_response_gat	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_get protocol_binary_response_gat;$/;"	t
 protocol_binary_response_gatq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_get protocol_binary_response_gatq;$/;"	t
-protocol_binary_response_get	libmemcached_protocol/binary.h	/^    } protocol_binary_response_get;$/;"	t	typeref:union:__anon15
-protocol_binary_response_get_vbucket	libmemcached_protocol/binary.h	/^    } protocol_binary_response_get_vbucket;$/;"	t	typeref:union:__anon57
+protocol_binary_response_get	libmemcached_protocol/binary.h	/^    } protocol_binary_response_get;$/;"	t	typeref:union:__anon19
+protocol_binary_response_get_vbucket	libmemcached_protocol/binary.h	/^    } protocol_binary_response_get_vbucket;$/;"	t	typeref:union:__anon61
 protocol_binary_response_getk	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_get protocol_binary_response_getk;$/;"	t
 protocol_binary_response_getkq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_get protocol_binary_response_getkq;$/;"	t
 protocol_binary_response_getq	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_get protocol_binary_response_getq;$/;"	t
-protocol_binary_response_header	libmemcached_protocol/binary.h	/^    } protocol_binary_response_header;$/;"	t	typeref:union:__anon10
-protocol_binary_response_incr	libmemcached_protocol/binary.h	/^    } protocol_binary_response_incr;$/;"	t	typeref:union:__anon27
-protocol_binary_response_no_extras	libmemcached_protocol/binary.h	/^    } protocol_binary_response_no_extras;$/;"	t	typeref:union:__anon13
+protocol_binary_response_header	libmemcached_protocol/binary.h	/^    } protocol_binary_response_header;$/;"	t	typeref:union:__anon14
+protocol_binary_response_incr	libmemcached_protocol/binary.h	/^    } protocol_binary_response_incr;$/;"	t	typeref:union:__anon31
+protocol_binary_response_no_extras	libmemcached_protocol/binary.h	/^    } protocol_binary_response_no_extras;$/;"	t	typeref:union:__anon17
 protocol_binary_response_noop	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_noop;$/;"	t
 protocol_binary_response_prepend	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_prepend;$/;"	t
 protocol_binary_response_quit	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_quit;$/;"	t
@@ -1851,7 +1808,7 @@ protocol_binary_response_scrub	libmemcached_protocol/binary.h	/^    typedef prot
 protocol_binary_response_set	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_set;$/;"	t
 protocol_binary_response_set_vbucket	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_set_vbucket;$/;"	t
 protocol_binary_response_stats	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_stats;$/;"	t
-protocol_binary_response_status	libmemcached_protocol/binary.h	/^    } protocol_binary_response_status;$/;"	t	typeref:enum:__anon5
+protocol_binary_response_status	libmemcached_protocol/binary.h	/^    } protocol_binary_response_status;$/;"	t	typeref:enum:__anon9
 protocol_binary_response_touch	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_touch;$/;"	t
 protocol_binary_response_verbosity	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_verbosity;$/;"	t
 protocol_binary_response_version	libmemcached_protocol/binary.h	/^    typedef protocol_binary_response_no_extras protocol_binary_response_version;$/;"	t
@@ -1875,28 +1832,28 @@ read_item	file_io.cpp	/^memcache_item* file_reader::read_item(void)$/;"	f	class:
 read_keys	obj_gen.cpp	/^bool imported_keylist::read_keys(void)$/;"	f	class:imported_keylist
 read_string	file_io.cpp	/^char* file_reader::read_string(unsigned int len,$/;"	f	class:file_reader
 reconnect_interval	memtier_benchmark.h	/^    unsigned int reconnect_interval;$/;"	m	struct:benchmark_config
-recorded	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_recorded recorded;$/;"	m	union:hdr_iter::__anon61	typeref:struct:hdr_iter::__anon61::hdr_iter_recorded
+recorded	deps/hdr_histogram/hdr_histogram.h	/^        struct hdr_iter_recorded recorded;$/;"	m	union:hdr_iter::__anon2	typeref:struct:hdr_iter::__anon2::hdr_iter_recorded
 recorded_iter_next	deps/hdr_histogram/hdr_histogram.c	/^static bool recorded_iter_next(struct hdr_iter* iter)$/;"	f	file:
 redis_protocol	protocol.cpp	/^    redis_protocol() : m_response_state(rs_initial), m_bulk_len(0), m_response_len(0), m_total_bulks_count(0), m_current_mbulk(NULL) { }$/;"	f	class:redis_protocol
 redis_protocol	protocol.cpp	/^class redis_protocol : public abstract_protocol {$/;"	c	file:
-request	libmemcached_protocol/binary.h	/^        } request;$/;"	m	union:__anon8	typeref:struct:__anon8::__anon9
+request	libmemcached_protocol/binary.h	/^        } request;$/;"	m	union:__anon12	typeref:struct:__anon12::__anon13
 request	shard_connection.cpp	/^request::request(request_type type, unsigned int size, struct timeval* sent_time, unsigned int keys)$/;"	f	class:request
 request	shard_connection.h	/^struct request {$/;"	s
 request_type	shard_connection.h	/^enum request_type { rt_unknown, rt_set, rt_get, rt_wait, rt_arbitrary, rt_auth, rt_select_db, rt_cluster_slots };$/;"	g
 requests	memtier_benchmark.h	/^    unsigned long long requests;$/;"	m	struct:benchmark_config
-res1	libmemcached_protocol/binary.h	/^                    uint8_t  res1;$/;"	m	struct:__anon45::__anon46::__anon47::__anon48
-res1	libmemcached_protocol/binary.h	/^                    uint8_t  res1;$/;"	m	struct:__anon50::__anon51::__anon52::__anon53
-res2	libmemcached_protocol/binary.h	/^                    uint8_t  res2;$/;"	m	struct:__anon45::__anon46::__anon47::__anon48
-res2	libmemcached_protocol/binary.h	/^                    uint8_t  res2;$/;"	m	struct:__anon50::__anon51::__anon52::__anon53
-res3	libmemcached_protocol/binary.h	/^                    uint8_t  res3;$/;"	m	struct:__anon45::__anon46::__anon47::__anon48
-res3	libmemcached_protocol/binary.h	/^                    uint8_t  res3;$/;"	m	struct:__anon50::__anon51::__anon52::__anon53
-reserved	libmemcached_protocol/binary.h	/^                uint8_t  reserved;$/;"	m	struct:__anon39::__anon40::__anon41
+res1	libmemcached_protocol/binary.h	/^                    uint8_t  res1;$/;"	m	struct:__anon49::__anon50::__anon51::__anon52
+res1	libmemcached_protocol/binary.h	/^                    uint8_t  res1;$/;"	m	struct:__anon54::__anon55::__anon56::__anon57
+res2	libmemcached_protocol/binary.h	/^                    uint8_t  res2;$/;"	m	struct:__anon49::__anon50::__anon51::__anon52
+res2	libmemcached_protocol/binary.h	/^                    uint8_t  res2;$/;"	m	struct:__anon54::__anon55::__anon56::__anon57
+res3	libmemcached_protocol/binary.h	/^                    uint8_t  res3;$/;"	m	struct:__anon49::__anon50::__anon51::__anon52
+res3	libmemcached_protocol/binary.h	/^                    uint8_t  res3;$/;"	m	struct:__anon54::__anon55::__anon56::__anon57
+reserved	libmemcached_protocol/binary.h	/^                uint8_t  reserved;$/;"	m	struct:__anon43::__anon44::__anon45
 reset	run_stats_types.cpp	/^void ar_one_sec_cmd_stats::reset() {$/;"	f	class:ar_one_sec_cmd_stats
 reset	run_stats_types.cpp	/^void one_sec_cmd_stats::reset() {$/;"	f	class:one_sec_cmd_stats
 reset	run_stats_types.cpp	/^void one_second_stats::reset(unsigned int second) {$/;"	f	class:one_second_stats
 resolve	config_types.cpp	/^int server_addr::resolve(void)$/;"	f	class:server_addr
 resolve_on_connect	memtier_benchmark.h	/^    bool resolve_on_connect;$/;"	m	struct:benchmark_config
-response	libmemcached_protocol/binary.h	/^        } response;$/;"	m	union:__anon10	typeref:struct:__anon10::__anon11
+response	libmemcached_protocol/binary.h	/^        } response;$/;"	m	union:__anon14	typeref:struct:__anon14::__anon15
 response_state	protocol.cpp	/^    enum response_state { rs_initial, rs_read_body };$/;"	g	class:memcache_binary_protocol	file:
 response_state	protocol.cpp	/^    enum response_state { rs_initial, rs_read_bulk, rs_read_line, rs_end_bulk };$/;"	g	class:redis_protocol	file:
 response_state	protocol.cpp	/^    enum response_state { rs_initial, rs_read_section, rs_read_value, rs_read_end };$/;"	g	class:memcache_text_protocol	file:
@@ -2020,35 +1977,35 @@ sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
 show_config	memtier_benchmark.h	/^    int show_config;$/;"	m	struct:benchmark_config
 significant_figures	deps/hdr_histogram/hdr_histogram.h	/^    int32_t significant_figures;$/;"	m	struct:hdr_histogram
 significant_figures	deps/hdr_histogram/hdr_histogram.h	/^    int64_t significant_figures;$/;"	m	struct:hdr_histogram_bucket_config
-significant_figures	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t significant_figures;$/;"	m	struct:__anon63	file:
-significant_figures	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t significant_figures;$/;"	m	struct:__anon64	file:
+significant_figures	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t significant_figures;$/;"	m	struct:__anon4	file:
+significant_figures	deps/hdr_histogram/hdr_histogram_log.c	/^    int32_t significant_figures;$/;"	m	struct:__anon5	file:
 size	config_types.h	/^        unsigned int size;$/;"	m	struct:config_weight_list::weight_item
 size	config_types.h	/^    size_t size() const {$/;"	f	struct:arbitrary_command_list
-size	libmemcached_protocol/binary.h	/^                uint16_t size;$/;"	m	struct:__anon39::__anon40::__anon41
+size	libmemcached_protocol/binary.h	/^                uint16_t size;$/;"	m	struct:__anon43::__anon44::__anon45
 size	obj_gen.cpp	/^unsigned int imported_keylist::size(void)$/;"	f	class:imported_keylist
 size	run_stats_types.cpp	/^size_t ar_one_sec_cmd_stats::size() const {$/;"	f	class:ar_one_sec_cmd_stats
 size	run_stats_types.cpp	/^size_t ar_totals_cmd::size() const {$/;"	f	class:ar_totals_cmd
-size_fixed	obj_gen.h	/^        unsigned int size_fixed;$/;"	m	union:object_generator::__anon1
-size_list	obj_gen.h	/^        config_weight_list* size_list;$/;"	m	union:object_generator::__anon1
-size_max	obj_gen.h	/^            unsigned int size_max;$/;"	m	struct:object_generator::__anon1::__anon2
-size_min	obj_gen.h	/^            unsigned int size_min;$/;"	m	struct:object_generator::__anon1::__anon2
-size_range	obj_gen.h	/^        } size_range;$/;"	m	union:object_generator::__anon1	typeref:struct:object_generator::__anon1::__anon2
+size_fixed	obj_gen.h	/^        unsigned int size_fixed;$/;"	m	union:object_generator::__anon64
+size_list	obj_gen.h	/^        config_weight_list* size_list;$/;"	m	union:object_generator::__anon64
+size_max	obj_gen.h	/^            unsigned int size_max;$/;"	m	struct:object_generator::__anon64::__anon65
+size_min	obj_gen.h	/^            unsigned int size_min;$/;"	m	struct:object_generator::__anon64::__anon65
+size_range	obj_gen.h	/^        } size_range;$/;"	m	union:object_generator::__anon64	typeref:struct:object_generator::__anon64::__anon65
 size_to_str	memtier_benchmark.cpp	/^void size_to_str(unsigned long int size, char *buf, int buf_len)$/;"	f
 slots_done	shard_connection.h	/^enum cluster_slots_state { slots_none, slots_sent, slots_done };$/;"	e	enum:cluster_slots_state
 slots_none	shard_connection.h	/^enum cluster_slots_state { slots_none, slots_sent, slots_done };$/;"	e	enum:cluster_slots_state
 slots_sent	shard_connection.h	/^enum cluster_slots_state { slots_none, slots_sent, slots_done };$/;"	e	enum:cluster_slots_state
 snprintf	deps/hdr_histogram/hdr_histogram.c	905;"	d	file:
 snprintf	deps/hdr_histogram/hdr_histogram.c	923;"	d	file:
-specifics	deps/hdr_histogram/hdr_histogram.h	/^    } specifics;$/;"	m	struct:hdr_iter	typeref:union:hdr_iter::__anon61
+specifics	deps/hdr_histogram/hdr_histogram.h	/^    } specifics;$/;"	m	struct:hdr_iter	typeref:union:hdr_iter::__anon2
 split_command_to_args	config_types.cpp	/^bool arbitrary_command::split_command_to_args() {$/;"	f	class:arbitrary_command
 srcdir	Makefile	/^srcdir = .$/;"	m
 ssize_t	deps/hdr_histogram/hdr_histogram_log.c	/^typedef SSIZE_T ssize_t;$/;"	t	file:
 start	memtier_benchmark.cpp	/^    int start(void)$/;"	f	struct:cg_thread
 start_timestamp	deps/hdr_histogram/hdr_histogram_log.h	/^    hdr_timespec start_timestamp;$/;"	m	struct:hdr_log_entry
 start_timestamp	deps/hdr_histogram/hdr_histogram_log.h	/^    hdr_timespec start_timestamp;$/;"	m	struct:hdr_log_reader
-state	libmemcached_protocol/binary.h	/^                vbucket_state_t state;$/;"	m	struct:__anon54::__anon55::__anon56
-state	libmemcached_protocol/binary.h	/^                vbucket_state_t state;$/;"	m	struct:__anon57::__anon58::__anon59
-status	libmemcached_protocol/binary.h	/^            uint16_t status;$/;"	m	struct:__anon10::__anon11
+state	libmemcached_protocol/binary.h	/^                vbucket_state_t state;$/;"	m	struct:__anon58::__anon59::__anon60
+state	libmemcached_protocol/binary.h	/^                vbucket_state_t state;$/;"	m	struct:__anon61::__anon62::__anon63
+status	libmemcached_protocol/binary.h	/^            uint16_t status;$/;"	m	struct:__anon14::__anon15
 status_text	protocol.cpp	/^const char* memcache_binary_protocol::status_text(void)$/;"	f	class:memcache_binary_protocol
 str_value	run_stats.h	/^    std::string str_value;$/;"	m	struct:table_el
 string_el	run_stats.h	/^    string_el,$/;"	e	enum:tabel_el_type
@@ -2073,8 +2030,8 @@ table_column	run_stats.h	/^struct table_column {$/;"	s
 table_el	run_stats.h	/^struct table_el {$/;"	s
 tag	deps/hdr_histogram/hdr_histogram_log.h	/^    char *tag;$/;"	m	struct:hdr_log_entry
 tag_len	deps/hdr_histogram/hdr_histogram_log.h	/^    size_t tag_len;$/;"	m	struct:hdr_log_entry
-tap	libmemcached_protocol/binary.h	/^                } tap;$/;"	m	struct:__anon45::__anon46::__anon47	typeref:struct:__anon45::__anon46::__anon47::__anon48
-tap	libmemcached_protocol/binary.h	/^                } tap;$/;"	m	struct:__anon50::__anon51::__anon52	typeref:struct:__anon50::__anon51::__anon52::__anon53
+tap	libmemcached_protocol/binary.h	/^                } tap;$/;"	m	struct:__anon49::__anon50::__anon51	typeref:struct:__anon49::__anon50::__anon51::__anon52
+tap	libmemcached_protocol/binary.h	/^                } tap;$/;"	m	struct:__anon54::__anon55::__anon56	typeref:struct:__anon54::__anon55::__anon56::__anon57
 tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2$/;"	m
 tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz$/;"	m
 tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z$/;"	m
@@ -2101,7 +2058,7 @@ top_distdir	Makefile	/^top_distdir = $(distdir)$/;"	m
 top_srcdir	Makefile	/^top_srcdir = .$/;"	m
 total_count	deps/hdr_histogram/hdr_histogram.h	/^    int64_t total_count;$/;"	m	struct:hdr_histogram
 total_count	deps/hdr_histogram/hdr_histogram.h	/^    int64_t total_count;$/;"	m	struct:hdr_iter
-total_count	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t total_count;$/;"	m	struct:__anon63	file:
+total_count	deps/hdr_histogram/hdr_histogram_log.c	/^    int64_t total_count;$/;"	m	struct:__anon4	file:
 total_latency	run_stats_types.cpp	/^unsigned long long int ar_one_sec_cmd_stats::total_latency() {$/;"	f	class:ar_one_sec_cmd_stats
 totals	run_stats_types.cpp	/^totals::totals() :$/;"	f	class:totals
 totals	run_stats_types.h	/^class totals {$/;"	c
@@ -2110,8 +2067,8 @@ totals_cmd	run_stats_types.h	/^class totals_cmd {$/;"	c
 transform	Makefile	/^transform = $(program_transform_name)$/;"	m
 ts_diff	run_stats.h	/^inline long long int ts_diff(struct timeval a, struct timeval b)$/;"	f
 ts_diff_now	run_stats.cpp	/^inline unsigned long int ts_diff_now(struct timeval a)$/;"	f
-ttl	libmemcached_protocol/binary.h	/^                    uint8_t  ttl;$/;"	m	struct:__anon45::__anon46::__anon47::__anon48
-ttl	libmemcached_protocol/binary.h	/^                    uint8_t  ttl;$/;"	m	struct:__anon50::__anon51::__anon52::__anon53
+ttl	libmemcached_protocol/binary.h	/^                    uint8_t  ttl;$/;"	m	struct:__anon49::__anon50::__anon51::__anon52
+ttl	libmemcached_protocol/binary.h	/^                    uint8_t  ttl;$/;"	m	struct:__anon54::__anon55::__anon56::__anon57
 tv_nsec	deps/hdr_histogram/hdr_time.h	/^    long tv_nsec;$/;"	m	struct:hdr_timespec
 tv_sec	deps/hdr_histogram/hdr_time.h	/^    long tv_sec;$/;"	m	struct:hdr_timespec
 type	config_types.h	/^    command_arg_type type;$/;"	m	struct:command_arg
@@ -2142,19 +2099,19 @@ upper_level	protocol.h	/^    mbulk_size_el *upper_level;$/;"	m	class:mbulk_size_
 usage	memtier_benchmark.cpp	/^void usage() {$/;"	f
 validate_log_version	deps/hdr_histogram/hdr_histogram_log.c	/^static bool validate_log_version(struct hdr_log_reader* reader)$/;"	f	file:
 value	deps/hdr_histogram/hdr_histogram.h	/^    int64_t value;$/;"	m	struct:hdr_iter
-value	libmemcached_protocol/binary.h	/^                uint64_t value;$/;"	m	struct:__anon27::__anon28::__anon29
+value	libmemcached_protocol/binary.h	/^                uint64_t value;$/;"	m	struct:__anon31::__anon32::__anon33
 value	protocol.h	/^    char* value;$/;"	m	class:bulk_el
 value_from_index	deps/hdr_histogram/hdr_histogram.c	/^static int64_t value_from_index(int32_t bucket_index, int32_t sub_bucket_index, int32_t unit_magnitude)$/;"	f	file:
 value_iterated_from	deps/hdr_histogram/hdr_histogram.h	/^    int64_t value_iterated_from;$/;"	m	struct:hdr_iter
 value_iterated_to	deps/hdr_histogram/hdr_histogram.h	/^    int64_t value_iterated_to;$/;"	m	struct:hdr_iter
 value_len	protocol.h	/^    unsigned int value_len;$/;"	m	class:bulk_el
 value_units_per_bucket	deps/hdr_histogram/hdr_histogram.h	/^    int64_t value_units_per_bucket;$/;"	m	struct:hdr_iter_linear
-vbucket	libmemcached_protocol/binary.h	/^            uint16_t vbucket;$/;"	m	struct:__anon8::__anon9
-vbucket_state_active	libmemcached_protocol/vbucket.h	/^    vbucket_state_active = 1, \/**< Actively servicing a vbucket. *\/$/;"	e	enum:__anon60
-vbucket_state_dead	libmemcached_protocol/vbucket.h	/^    vbucket_state_dead \/**< Not in use, pending deletion. *\/$/;"	e	enum:__anon60
-vbucket_state_pending	libmemcached_protocol/vbucket.h	/^    vbucket_state_pending, \/**< Pending active. *\/$/;"	e	enum:__anon60
-vbucket_state_replica	libmemcached_protocol/vbucket.h	/^    vbucket_state_replica, \/**< Servicing a vbucket as a replica only. *\/$/;"	e	enum:__anon60
-vbucket_state_t	libmemcached_protocol/vbucket.h	/^} vbucket_state_t;$/;"	t	typeref:enum:__anon60
+vbucket	libmemcached_protocol/binary.h	/^            uint16_t vbucket;$/;"	m	struct:__anon12::__anon13
+vbucket_state_active	libmemcached_protocol/vbucket.h	/^    vbucket_state_active = 1, \/**< Actively servicing a vbucket. *\/$/;"	e	enum:__anon7
+vbucket_state_dead	libmemcached_protocol/vbucket.h	/^    vbucket_state_dead \/**< Not in use, pending deletion. *\/$/;"	e	enum:__anon7
+vbucket_state_pending	libmemcached_protocol/vbucket.h	/^    vbucket_state_pending, \/**< Pending active. *\/$/;"	e	enum:__anon7
+vbucket_state_replica	libmemcached_protocol/vbucket.h	/^    vbucket_state_replica, \/**< Servicing a vbucket as a replica only. *\/$/;"	e	enum:__anon7
+vbucket_state_t	libmemcached_protocol/vbucket.h	/^} vbucket_state_t;$/;"	t	typeref:enum:__anon7
 verify_arbitrary_command_option	memtier_benchmark.cpp	/^static bool verify_arbitrary_command_option(struct benchmark_config *cfg) {$/;"	f	file:
 verify_client	client.cpp	/^verify_client::verify_client(struct event_base *event_base,$/;"	f	class:verify_client
 verify_client	client.h	/^class verify_client : public client {$/;"	c
